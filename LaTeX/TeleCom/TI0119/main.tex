@@ -1,0 +1,89 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amsfonts,amssymb,enumerate,MnSymbol}
+\usepackage{indentfirst,siunitx}
+\usepackage{pst-sigsys,pst-all,graphicx}
+%\usepackage[dvips]{graphicx}
+%\usepackage{booktabs,pstricks-add,pst-coil,siunitx,multirow,steinmetz}
+%\usepackage[usenames,dvipsnames,svgnames,table,x11names]{xcolor}
+%\usepackage[brazil]{varioref}
+%\usepackage{pstricks-add,subfig,caption,url,verbatim,textcomp}
+%\usepackage[cdot,squaren,Gray]{SIunits}
+%\usepackage[framed, numbered, autolinebreaks, useliterate]{mcode}
+% Setup pages
+\setlength{\hoffset}{-3cm}
+\setlength{\voffset}{-3cm}
+\setlength{\textheight}{25.0cm}
+\setlength{\textwidth}{19.5cm}
+\pagestyle{empty}
+% Setup Table Cells
+% \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+\hyphenation{}
+%
+\newtheorem{defin}{Definition}[section]
+\newtheorem{teorema}{Theorem}[section]
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\cdot$}
+\renewcommand{\labelitemiii}{$\diamond$}
+\renewcommand{\labelitemiv}{$\ast$}
+%
+%\setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
+%
+%\graphicspath{{figures/}}
+%\DeclareGraphicsExtensions{.eps}
+%%\listfiles
+%
+\begin{document}
+{
+%
+     {\sf
+       \vspace*{4cm}
+      \begin{center}
+%         {\Large{\bfseries Universidade Federal do Ceará}}\\
+%         \vspace*{1.0cm}
+%         {\Large{\bfseries Centro de Tecnologia}}\\
+%         \vspace*{1.0cm}
+         {\Large {\bfseries Departamento de Engenharia de Engenharia de Teleinformática}}\\
+         \vspace*{1.0cm}
+         {\Large{\bfseries Disciplina:TH$0119$ -- PDS}}\\
+         \vspace*{1.0cm}
+%         %%{\large{\bfseries Introdução à Instrumentação e aos Princípios Básicos da Eletricidade}}
+          %%{\large{\bfseries Ondas planas em meios com e sem perdas}}
+         {\large{\bfseries 1a. Lista de Exercícios}}
+     \end{center}
+% %
+ \vspace*{12.0cm}
+    {\Large
+        \begin{flushleft}
+	       \noindent Aluno: Ogeniz Façanha Costa\\
+	       Curso: Engenharia de Telecomunicações\\
+	       Matrícula: 371987\\
+%	       Disciplina:TH$0119$ -- PDS
+        \end{flushleft}}
+    }
+%
+\newpage
+%
+% \addcontentsline{toc}{section}{Introdução Teórica}
+% \addcontentsline{toc}{section}{Prática}
+% \addcontentsline{toc}{section}{Conclusão}
+% \tableofcontents
+% \listoftables
+\include{lista1/report}
+}
+%
+\bibliographystyle{ieeetr}
+\bibliography{refpld}
+\addcontentsline{toc}{section}{Referências Bibliográficas}
+%
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
