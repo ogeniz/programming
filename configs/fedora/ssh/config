@@ -1,0 +1,60 @@
+Host *
+ControlMaster auto 
+ControlPath /tmp/%r@%h:%p
+VisualHostKey yes
+ForwardAgent no
+ForwardX11 no
+ServerAliveInterval 30
+RhostsRSAAuthentication no
+RSAAuthentication no
+PasswordAuthentication no
+HostbasedAuthentication no
+EnableSSHKeysign yes
+PreferredAuthentications publickey
+BatchMode no
+CheckHostIP no
+AddressFamily any
+ConnectTimeout 0
+StrictHostKeyChecking ask
+Protocol 2
+Cipher blowfish
+Ciphers blowfish-cbc,aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour
+MACs hmac-ripemd160,hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1-96,hmac-md5-96
+Compression yes
+CompressionLevel 9
+UserKnownHostsFile ~/.ssh/known_hosts
+HashKnownHosts yes
+EscapeChar ~
+LogLevel INFO
+
+Host s0
+HostName 200.17.37.84
+IdentityFile ~/.ssh/id_rsa_ogeniz
+LogLevel INFO
+User ogeniz
+
+Host s0_root
+HostName 200.17.37.84
+IdentityFile ~/.ssh/id_rsa_root_gtel_key
+LogLevel INFO
+User root
+
+Host pagp
+HostName 192.168.200.4
+IdentityFile ~/.ssh/id_rsa_root_gtel_key
+ProxyCommand ssh s0 nc %h %p
+User pagp
+LogLevel INFO
+
+Host github
+HostName github.com
+IdentityFile ~/.ssh/id_rsa_ogeniz
+User git
+LogLevel DEBUG1
+
+Host gitolite
+HostName 192.168.200.4
+IdentityFile ~/.ssh/id_rsa_root_gtel_key
+ProxyCommand ssh s0 nc %h %p
+User git
+LogLevel INFO
