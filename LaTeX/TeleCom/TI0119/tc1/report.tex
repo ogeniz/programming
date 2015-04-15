@@ -1,0 +1,20 @@
+\begin{center}
+	\fbox{\large{Convolução}}
+\end{center}
+A definição matemática de convolução vem da análise funcional, sendo este um operador linear dadas duas funções quaisquer resulta-se em uma terceira que é a medida da área superposta, a soma, entre as mesmas em função do deslocamento entre estas. \noindent Para sequências discretas $x[n]$ e $h[n]$ com $n \in \mathbb{Z}$ a convolução é definida por: $$\displaystyle y[n] = x[n] * h[n] = \sum_{k = -\infty}^{k = \infty} x[k] \cdot h[n -k]$$
+
+No estudo de sistemas lineares e invariantes no tempo a convolução descreve a saída de um dado sistema sendo a sinal de entrada convolvido com a resposta ao impulso do sistema. Seja um sistema causal com sua resposta ao impulso dada por $h[n] = 2\delta[n] + \delta[n-1]$ e entrada $x[n] = 3\delta[n] + 4\delta[n-1] + 5\delta[n-2]$
+\begin{figure}{h}
+\centering
+\subfloat[x[n]]{%
+    \psset{xunit=0.5cm,yunit=0.5cm,yAxis=false}
+    \begin{pspicture}(-11,0)(11,0) 	
+        \psaxes[Dx=5, subticks=5]{<->}(0,0)(-11,0)(11,0) 	%creates axes
+        \psline[linewidth=3pt, linecolor=cyan]{o->}(-2,0)(11,0) 
+    \end{pspicture}
+    \label{fig:entrada}}
+\quad
+\subfloat[h[n]]{%
+     \label{fig:saida}}
+\caption{$y[n] = x[n]*h[n]$}
+\end{figure}
