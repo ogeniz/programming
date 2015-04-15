@@ -1,20 +1,60 @@
 \begin{center}
 	\fbox{\large{Convolução}}
 \end{center}
+
+
 A definição matemática de convolução vem da análise funcional, sendo este um operador linear dadas duas funções quaisquer resulta-se em uma terceira que é a medida da área superposta, a soma, entre as mesmas em função do deslocamento entre estas. \noindent Para sequências discretas $x[n]$ e $h[n]$ com $n \in \mathbb{Z}$ a convolução é definida por: $$\displaystyle y[n] = x[n] * h[n] = \sum_{k = -\infty}^{k = \infty} x[k] \cdot h[n -k]$$
 
 No estudo de sistemas lineares e invariantes no tempo a convolução descreve a saída de um dado sistema sendo a sinal de entrada convolvido com a resposta ao impulso do sistema. Seja um sistema causal com sua resposta ao impulso dada por $h[n] = 2\delta[n] + \delta[n-1]$ e entrada $x[n] = 3\delta[n] + 4\delta[n-1] + 5\delta[n-2]$
-\begin{figure}{h}
-\centering
-\subfloat[x[n]]{%
-    \psset{xunit=0.5cm,yunit=0.5cm,yAxis=false}
-    \begin{pspicture}(-11,0)(11,0) 	
-        \psaxes[Dx=5, subticks=5]{<->}(0,0)(-11,0)(11,0) 	%creates axes
-        \psline[linewidth=3pt, linecolor=cyan]{o->}(-2,0)(11,0) 
-    \end{pspicture}
-    \label{fig:entrada}}
-\quad
-\subfloat[h[n]]{%
-     \label{fig:saida}}
-\caption{$y[n] = x[n]*h[n]$}
-\end{figure}
+
+\begin{center}
+  \begin{pspicture}(0,0)(3,5)
+    \psaxes{-}(0,0)(3,0)
+    \psline[linewidth=1pt,showpoints=true](0,0)(0,3) % x[n]
+    \psline[linewidth=1pt,showpoints=true](1,0)(1,4) % x[n-1]
+    \psline[linewidth=1pt,showpoints=true](2,0)(2,5) % x[n-2]
+  \end{pspicture}
+  \qquad
+  \begin{pspicture}(0,0)(3,5)
+    \psaxes{-}(0,0)(3,0)
+    \psline[linewidth=1pt,showpoints=true](0,0)(0,3) % x[n]
+    \psline[linewidth=1pt,showpoints=true](1,0)(1,4) % x[n-1]
+    \psline[linewidth=1pt,showpoints=true](2,0)(2,5) % x[n-2]
+  \end{pspicture}
+\end{center}
+% \begin{center}
+%   \begin{pspicture}(-2.6,-2.7)(2.6,2.2)
+%     \rput(0,2.2){Unit Circle (radius 1)}
+%     \psaxes[labels=none]{<->}(0,0)(-2,-2)(2,2)
+%     \pscircle(0,0){1}
+%     \psline{->}(0,0)(-1.2,1.6)
+%     \psarc{->}(0,0){.5}{0}{126.8698976}
+%     \rput(.5,.5){$\theta$}
+%     \pscircle[fillstyle=solid,fillcolor=black](-.6,.8){.05}
+%     \rput[Bl](-2.6,.8){$(\cos\theta,\sin\theta)$}
+%     \rput(0,-2.5){$x^2+y^2=1$}
+%   \end{pspicture} %No carriage return so these pspictures
+%   % are on the same lines
+%   \qquad\qquad %qquad is a horizontal length. quad is shorter.
+%   % There are also \ (\ and a space) and \,
+%   % and a small ``negative space'' \!
+%   \begin{pspicture}(-2.6,-2.7)(2.6,2.2)
+%     \psaxes[labels=none]{<->}(0,0)(-2,-2)(2,2)
+%     \pscircle[linewidth=.5pt](0,0){1}
+%     \psline{->}(0,0)(-1.2,1.6)
+%     \psarc{->}(0,0){1}{0}{126.8698976}
+%     \rput(1.2,-.2){$r$}
+%     \rput(1.8,1){$\begin{array}{l}s=r\,\theta\\ \theta=s/r\end{array}$}
+%     \rput(0,2.2){General Circle (radius $r$)}
+%     \pscircle[fillstyle=solid,fillcolor=black](-.6,.8){.05}
+%     % Alternatively: \pscircle*(-.6,.6){.05}
+%     \rput(-2.1,.8){$(r\cos\theta,r\sin\theta)$}
+%     \rput(0,-2.5){$x^2+y^2=r^2$}
+%     \rput(0,-3){$\theta$ in radians}
+%   \end{pspicture}
+% \end{center}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
