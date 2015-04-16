@@ -1,0 +1,45 @@
+\begin{center}
+	\fbox{\large{Convolução}}
+\end{center}
+
+
+A definição matemática de convolução vem da análise funcional, sendo este um operador linear dadas duas funções quaisquer resulta-se em uma terceira que é a medida da área superposta, a soma, entre as mesmas em função do deslocamento entre estas. \noindent Para sequências discretas $x[n]$ e $h[n]$ com $n \in \mathbb{Z}$ a convolução é definida por: $$\displaystyle y[n] = x[n] * h[n] = \sum_{k = -\infty}^{k = \infty} x[k] \cdot h[n -k]$$
+
+No estudo de sistemas lineares e invariantes no tempo a convolução descreve a saída de um dado sistema sendo a sinal de entrada convolvido com a resposta ao impulso do sistema. Seja um sistema causal com sua resposta ao impulso dada por $h[n] = 2\delta[n] + \delta[n-1]$ e entrada $x[n] = 3\delta[n] + 4\delta[n-1] + 5\delta[n-2]$
+
+\begin{figure*}[hb]
+  \centering
+  \begin{subfigure}[h]{0.3\textwidth}
+    \begin{center}
+      \begin{pspicture}(0,0)(3,5.75)
+        \psaxes{-}(0,0)(3,0)
+        \psline[linewidth=1pt,showpoints=true](0,0)(0,3) % x[n]
+        \psline[linewidth=1pt,showpoints=true](1,0)(1,4) % x[n-1]
+        \psline[linewidth=1pt,showpoints=true](2,0)(2,5) % x[n-2]
+        \rput(0,3.5){3} % weight of x[n]
+        \rput(1,4.5){4} % weight of x[n-1]
+        \rput(2,5.5){5} % weight of x[n-2]
+      \end{pspicture}
+    \end{center}
+    \caption{x[n]}
+  \end{subfigure}
+  %
+  \begin{subfigure}[h]{0.3\textwidth}
+    \begin{center}
+      \begin{pspicture}(0,0)(3,5.75)
+        \psaxes{-}(0,0)(3,0)
+        \psline[linewidth=1pt,showpoints=true](0,0)(0,2) % h[n]
+        \psline[linewidth=1pt,showpoints=true](1,0)(1,1) % h[n-1]
+        \rput(0,2.5){2} % weight of h[n]
+        \rput(1,1.5){1} % weight of h[n-1]
+      \end{pspicture}
+    \end{center}
+    \caption{h[n]}
+  \end{subfigure}
+  \caption{Sinais de entrada x[n] e resposta ao impulso do sistema h[n]}
+\end{figure*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
