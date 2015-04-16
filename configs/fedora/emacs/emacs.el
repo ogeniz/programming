@@ -91,46 +91,48 @@
 ;; unix pipes and highlight the contents of the tailed file. Works
 ;; locally or on remote files using tramp.
 ;; M-x itail RET /file/to/tail
-(require 'itail)
+;; (require 'itail)
 ;; Color Themes
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-arjen)
+;; (require 'color-theme)
+;; (color-theme-initialize)
+;; (color-theme-arjen)
         
 ;; Pretty tabbar, autohide, use both tabbar/ruler
-(require 'tabbar-ruler)    
+;; (require 'tabbar-ruler)    
 
 ;; Mode for fontification of ~/.ssh/config
-(autoload 'ssh-config-mode "ssh-config-mode" t)
-(add-to-list 'auto-mode-alist '(".ssh/config\\'"       . ssh-config-mode))
-(add-to-list 'auto-mode-alist '("sshd?_config\\'"      . ssh-config-mode))
-(add-to-list 'auto-mode-alist '("known_hosts\\'"       . ssh-known-hosts-mode))
-(add-to-list 'auto-mode-alist '("authorized_keys2?\\'" . ssh-authorized-keys-mode))
-(add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
+;; (autoload 'ssh-config-mode "ssh-config-mode" t)
+;; (add-to-list 'auto-mode-alist '(".ssh/config\\'"       . ssh-config-mode))
+;; (add-to-list 'auto-mode-alist '("sshd?_config\\'"      . ssh-config-mode))
+;; (add-to-list 'auto-mode-alist '("known_hosts\\'"       . ssh-known-hosts-mode))
+;; (add-to-list 'auto-mode-alist '("authorized_keys2?\\'" . ssh-authorized-keys-mode))
+;; (add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
 
 ;; Auto Completion for GNU Emacs
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/home/ogeniz/.emacs.d/ac-dict/")
-(ac-config-default)
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories "/home/ogeniz/.emacs.d/ac-dict/")
+;; (ac-config-default)
 ;; ;; An auto-complete source for Octave
 ;; (require 'ac-octave)
 ;; (defun ac-octave-mode-setup ()
 ;; (setq ac-sources '(ac-source-octave)))
 ;; (add-hook 'octave-mode-hook '(lambda () (ac-octave-mode-setup)))
 ;; An auto-complete source for C/C++ header files
-(require 'auto-complete-c-headers)
-(add-hook 'c-mode-hook
-            (lambda ()
-              (add-to-list 'ac-sources 'ac-source-c-headers)
-              (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+;; (require 'auto-complete-c-headers)
+;; (add-hook 'c-mode-hook
+;;             (lambda ()
+;;               (add-to-list 'ac-sources 'ac-source-c-headers)
+;;               (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 ;; (add-to-list 'ac-sources 'ac-source-c-headers)
 ;; ;; auto-completion for auctex
 ;; (require 'auto-complete-auctex)
 ;; Execute menu items as commands, with completion
-(require 'lacarte)
+;; (require 'lacarte)
 ;; Load Tramp
-(require 'tramp)
-(setq tramp-default-method "scp")
+;; (require 'tramp)
+;; Tramp Term
+;; (require 'tramp-term)
+;; (setq tramp-default-method "scp")
 ;; ;; Integrated environment for *TeX*
 ;; (load "auctex-pkg.elc" nil t t)
 ;; (load "preview.elc" nil t t)
@@ -146,3 +148,16 @@
 ;; (eval-after-load 'LaTeX-mode '(latex/setup-keybinds))
 ;; ;; Display many latex symbols as their unicode counterparts
 ;; (require 'latex-pretty-symbols)
+
+;; (require 'python)
+;; (setq
+;;  python-shell-interpreter "ipython3"
+;;  python-shell-interpreter-args ""
+;;  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;;  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;;  python-shell-completion-setup-code
+;;  "from IPython.core.completerlib import module_completion"
+;;  python-shell-completion-string-code
+;;  "';'.join(module_completion('''%s'''))\n"
+;;  python-shell-completion-string-code
+;;  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
