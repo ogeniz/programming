@@ -28,7 +28,7 @@ class Wave: # wave class definition
         self.__frequency = 2*math.pi*frequency # rad/s
     # end of default constructor
     def setModule(self,value):
-        self.__module = value
+        self.__init__(module = value)
     def setFrequency(self,value):
         self.__frequency = 2*math.pi*value # rad/s
     def setPhase(self,value):
@@ -47,41 +47,32 @@ class ElectroMagneticWave(): # electromagnetic wave definition
         self.__Media = Media(epsilon = epsilon,mu = mu,sigma = sigma)
         self.__impedance = cmath.sqrt(1j*frequency*self.__Media.getMu()/(self.__Media.getSigma() + 1j*frequency*self.__Media.getEpsilon()))
         self.__electricfield = Wave(module = module,frequency = frequency,phase = phase)
-        self.__magneticfield = Wave(module = (module/abs(self.__impedance)),frequency = frequency,phase = phase + cmath.phase(self.__impedance))
+        self.__magneticfield = Wave(module = (module/abs(self.__impedance)),frequency = frequency,phase = self.__electricfield.getPhase() + cmath.phase(self.__impedance))
         # end of default constructor
-    def updateMagnecticField(self): # if the media change, changes the magnetic field
-        self.__impedance = cmath.sqrt(1j*self.__electricfield.getFrequency()*self.__Media.getMu()/(self.__Media.getSigma() + 1j*self.__electricfield.getFrequency()*self.__Media.getEpsilon()))
-        self.__magneticfield.setPhase(self.__electricfield.getPhase())
-        if (self.__impedance.imag == 0):
-            self.__magneticfield.setModule(self.__electricfield.getModule()/self.__impedance)
-        else:
-            self.__magneticfield.setModule(self.__electricfield.getModule()/abs(self.__impedance))
-            self.__magneticfield.setPhase(self.__electricfield.getPhase() + cmath.phase(self.__impedance))
     def setEpsilon(self,value):
-        self.__Media.setEpsilon(value)
-        self.updateMagnecticField()
+        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = value,mu = self.__Media.getMu(),sigma = self.__Media.getSigma())
     def setMu(self,value):
-        self.__Media.setMu(value)
-        self.updateMagnecticField()
+        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = self.__Media.getEpsilon(),mu = value,sigma = self.__Media.getSigma())
     def setSigma(self,value):
-        self.__Media.setSigma(value)
-        self.updateMagnecticField()
+        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = self.__Media.getEpsilon(),mu = self.__Media.getMu(), sigma = value)
     def getMedia(self):
         self.__Media.printMedia()
     def getElectricField(self):
+        radtograd = 180/math.pi
         print("Electric Field ->","module =",self.__electricfield.getModule(),
-              "frequency =",self.__electricfield.getFrequency(),
-              "phase =",self.__electricfield.getPhase())
+              "frequency =",self.__electricfield.getFrequency()*radtograd,
+              "phase =",self.__electricfield.getPhase()*radtograd)
     def getMagneticField(self):
+        radtograd = 180/math.pi
         print("Magnectic Field ->","module =",self.__magneticfield.getModule(),
-              "frequency =",self.__magneticfield.getFrequency(),
-              "phase =",self.__magneticfield.getPhase())
+              "frequency =",self.__magneticfield.getFrequency()*radtograd,
+              "phase =",self.__magneticfield.getPhase()*radtograd)
 
-W = ElectroMagneticWave(module = 10.0,frequency = 10**3,epsilon = 54.0,sigma = 3.9) # 10V e 100Hz
+W = ElectroMagneticWave(module = 10.0,frequency = 10**3,phase = 30.0,epsilon = 54.0,sigma = 3.9) # 10V e 100Hz
 W.getMedia()
 W.getElectricField()
 W.getMagneticField()
-W.setSigma(0.0)
+W.setEpsilon(3.0)
 W.getMedia()
 W.getElectricField()
 W.getMagneticField()
