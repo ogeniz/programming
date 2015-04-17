@@ -3,76 +3,93 @@ import cmath
 
 class Media: # media class definition
     def __init__(self,epsilon = float(1.0),mu = float(1.0),sigma = float(0.0)):
-        self.__epsilon = epsilon * (10**(-9)/(36*math.pi)) # F/m
-        self.__mu = mu * (4*math.pi*10**(-7)) # H/m
+        self.__epsilon = epsilon * (10**(-9)/(36.0*math.pi)) # F/m
+        self.__mu = mu * (4.0*math.pi*10**(-7)) # H/m
         self.__sigma = sigma # Siemens        
     def setEpsilon(self,value):
-        self.__epsilon = value * (10**(-9)/(36*math.pi))
+        self.__epsilon = value * (10**(-9)/(36.0*math.pi)) # F/m
     def setMu(self,value):
-        self.__mu = value * (4*math.pi*10**(-7))
+        self.__mu = value * (4.0*math.pi*10**(-7)) # H/m
     def setSigma(self,value):
-        self.__sigma = value
+        self.__sigma = value # Siemens
+    def getEpsilonr(self):
+        return self.__epsilon/(10**(-9)/(36.0*math.pi)) # e_r
     def getEpsilon(self):
         return self.__epsilon
+    def getMur(self):
+        return self.__mu/(4.0*math.pi*10**(-7)) #mu_r
     def getMu(self):
         return self.__mu
     def getSigma(self):
         return self.__sigma
     def printMedia(self):
-        print("epsilon (F/m) = ",self.getEpsilon(),"mu (H/m) =",self.getMu(),"sigma (S)=",self.getSigma())
+        print("epsilon (F/m) = %.1f e0 mu (H/m) = %.1f mu0 sigma = %.1f (Siemens)" %
+              (self.getEpsilonr(),self.getMur(),self.getSigma()))
 
 class Wave: # wave class definition
     def __init__(self,module = float(1.0),frequency = float(0.0),phase = float(0.0)):
         self.__module = module
-        self.__phase = phase*(math.pi/180) # rad
-        self.__frequency = 2*math.pi*frequency # rad/s
+        self.__phase = phase*(math.pi/180.0) # rad
+        self.__frequency = 2.0*math.pi*frequency # rad/s
     # end of default constructor
     def setModule(self,value):
         self.__init__(module = value)
     def setFrequency(self,value):
-        self.__frequency = 2*math.pi*value # rad/s
+        self.__frequency = 2.0*math.pi*value # rad/s
     def setPhase(self,value):
         self.__phase = value*(math.pi/180) # rad
     def getFrequency(self):
-        return self.__frequency
+        return self.__frequency*0.5/math.pi# hz
     def getModule(self):
         return self.__module
     def getPhase(self):
-        return self.__phase # rad
+        return self.__phase*180.0/math.pi # degrees
     def printWave(self):
-        print("frequency (rad/s) =",self.getFrequency(),"module =",self.getModule(),"phase (rad) =",self.getPhase())
+        print("module = %.3f frequency = %.2f (Hz) phase = %.2f (degrees)" %
+              (self.getModule(),self.getFrequency(),self.getPhase()))
 
-class ElectroMagneticWave(): # electromagnetic wave definition
-    def __init__(self,module = float(1.0),frequency = float(1.0),phase = float(0.0),epsilon = float(1.0),mu = float(1.0),sigma = float(0.0)):
-        self.__Media = Media(epsilon = epsilon,mu = mu,sigma = sigma)
-        self.__impedance = cmath.sqrt(1j*frequency*self.__Media.getMu()/(self.__Media.getSigma() + 1j*frequency*self.__Media.getEpsilon()))
-        self.__electricfield = Wave(module = module,frequency = frequency,phase = phase)
-        self.__magneticfield = Wave(module = (module/abs(self.__impedance)),frequency = frequency,phase = self.__electricfield.getPhase() + cmath.phase(self.__impedance))
+class ElectroMagneticWave(): # electromagnetic wave definition    
+    def __init__(self,wmod = float(1.0),freq = float(1.0),phs = float(0.0),eps = float(1.0),mur = float(1.0),sig = float(0.0)):
+        rad2dgr = 180.0/math.pi
+        omega = 2*math.pi*freq
+        self.__Media = Media(epsilon = eps,mu = mur,sigma = sig)
+        self.__impedance = cmath.sqrt(1j*freq*self.__Media.getMu()/(self.__Media.getSigma() + 1j*freq*self.__Media.getEpsilon()))
+        self.__alpha =  omega*math.sqrt( (0.5*self.__Media.getMu()*self.__Media.getEpsilon()) * (math.sqrt(1+(self.__Media.getSigma()/(omega*self.__Media.getEpsilon()))**2) - 1) )
+        self.__beta =  omega*math.sqrt( (0.5*self.__Media.getMu()*self.__Media.getEpsilon()) * (math.sqrt(1+(self.__Media.getSigma()/(omega*self.__Media.getEpsilon()))**2) + 1) )
+        self.__tanperca = math.atan(self.__Media.getSigma()/(freq*self.__Media.getEpsilon()))
+        self.__electricfield = Wave(module = wmod,frequency = freq,phase = phs)
+        self.__magneticfield = Wave(module = (wmod/abs(self.__impedance)),frequency = freq,phase = (self.__electricfield.getPhase() + cmath.phase(self.__impedance)*rad2dgr))
         # end of default constructor
     def setEpsilon(self,value):
-        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = value,mu = self.__Media.getMu(),sigma = self.__Media.getSigma())
-    def setMu(self,value):
-        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = self.__Media.getEpsilon(),mu = value,sigma = self.__Media.getSigma())
+        self.__init__(wmod = self.__electricfield.getModule(),freq = self.__electricfield.getFrequency(),phs = self.__electricfield.getPhase(),eps = value,mur = self.__Media.getMur(),sig = self.__Media.getSigma())
+    def setMu(self,value):        
+        self.__init__(wmod = self.__electricfield.getModule(),freq = self.__electricfield.getFrequency(),phs = self.__electricfield.getPhase(),eps = self.__Media.getEpsilonr(),mur = value,sig = self.__Media.getSigma())        
     def setSigma(self,value):
-        self.__init__(module = self.__electricfield.getModule(),frequency = 0.5*self.__electricfield.getFrequency()/math.pi,phase = self.__electricfield.getPhase(),epsilon = self.__Media.getEpsilon(),mu = self.__Media.getMu(), sigma = value)
+        rad2dgr = 180.0/math.pi
+        self.__init__(wmod = self.__electricfield.getModule(),freq = self.__electricfield.getFrequency(),phs = self.__electricfield.getPhase(),eps = self.__Media.getEpsilonr(),mur = self.__Media.getMur(), sig = value)
+    def getAlpha(self):
+        return self.__alpha
+    def getBeta(self):
+        return self.__beta
+    def getTanPerca(self):
+        return self.__tanperca*180.0/math.pi
     def getMedia(self):
         self.__Media.printMedia()
-    def getElectricField(self):
-        radtograd = 180/math.pi
-        print("Electric Field ->","module =",self.__electricfield.getModule(),
-              "frequency =",self.__electricfield.getFrequency()*radtograd,
-              "phase =",self.__electricfield.getPhase()*radtograd)
+    def getImpedance(self):
+        return self.__impedance
+    def getElectricField(self):        
+        print("Electric Field Módulo (V/m)")
+        self.__electricfield.printWave()
+        print("alpha = %.2f (Np/m) beta = %.2f (rad/m) tanlost = %.2f (degrees)" %
+              (self.__alpha,self.__beta,self.__tanperca))
     def getMagneticField(self):
-        radtograd = 180/math.pi
-        print("Magnectic Field ->","module =",self.__magneticfield.getModule(),
-              "frequency =",self.__magneticfield.getFrequency()*radtograd,
-              "phase =",self.__magneticfield.getPhase()*radtograd)
+        print("Magnectic Field Módulo (A/m)")
+        self.__magneticfield.printWave()
+        print("alpha = %.2f (Np/m) beta = %.2f (rad/m) tanlost = %.2f (degrees)" %
+              (self.__alpha,self.__beta,self.__tanperca))
+    
 
-W = ElectroMagneticWave(module = 10.0,frequency = 10**3,phase = 30.0,epsilon = 54.0,sigma = 3.9) # 10V e 100Hz
-W.getMedia()
+W = ElectroMagneticWave(freq = 5*10**7,eps = 81,sig = 4)
 W.getElectricField()
-W.getMagneticField()
-W.setEpsilon(3.0)
-W.getMedia()
-W.getElectricField()
-W.getMagneticField()
+pp = (W.getAlpha()**(-1)*0.001)/0.3679
+print(pp)
