@@ -1,32 +1,45 @@
+(display-time)
+
 (custom-set-variables
- '(backup-by-copying t)
+ '(TeX-bar-LaTeX-buttons '(open-file save-buffer cut copy paste undo [separator nil] latex next-error view file bibtex clean latex-symbols-experimental nil)
+)
+ '(balloon-help-mode t nil (balloon-help))
+ '(bar-cursor nil)
  '(buffers-menu-format-buffer-line-function 'slow-format-buffers-menu-line)
- '(buffers-tab-switch-to-buffer-function 'switch-to-buffer)
  '(c-default-style '((c-mode . "ellemtel")
+  (c++-mode . "bsd")
   (java-mode . "java")
+  (awk-mode . "awk")
   (other . "gnu"))
 )
  '(c-echo-syntactic-information-p t)
  '(c-enable-xemacs-performance-kludge-p t)
+ '(c-report-syntactic-errors t)
+ '(cc-compilers-list '("gcc" "c89" "acc" "cc" "clang")
+)
  '(complex-buffers-menu-p t)
- '(confirm-kill-emacs nil)
- '(custom-menu-sort-alphabetically t)
  '(delete-selection-mode t)
+ '(dired-gnutar-program "tar" t)
+ '(dired-ls-F-marks-symlinks t)
+ '(dired-show-ls-switches t)
+ '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(font-lock-mode t nil (font-lock))
+ '(font-menu-ignore-scaled-fonts t t)
+ '(font-menu-this-frame-only-p t t)
+ '(garbage-collection-messages t)
  '(icomplete-mode t nil (icomplete))
- '(make-backup-files nil)
- '(menu-accelerator-enabled 'menu-force t))
+ '(ido-everywhere t)
+ '(ido-mode 'both nil (ido))
+ '(lazy-lock-mode t nil (lazy-lock))
+ '(lazy-lock-stealth-verbose t)
+ '(load-always-display-messages t)
+ '(load-show-full-path-in-messages t)
+ '(paren-mode 'paren t)
+ '(py-imenu-show-method-args-p t)
+ '(scroll-step 1))
+
 (custom-set-faces
- '(default ((t (:size "18pt" :family "Lucidabright"))) t))
-
-
-
-
-
-
-
-
-
-
-
+ '(default ((t (:size "18pt" :family "Lucida"))) t)
+ '(button ((t (:size "14pt" :family "LucidaTypeWriter" :underline t))))
+ '(menu ((t (:size "14pt" :family "LucidaTypeWriter" :underline t)))))
