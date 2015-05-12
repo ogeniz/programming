@@ -1,5 +1,5 @@
 \begin{enumerate}[1.]
-\item Os campos elétricos de duas ondas eletromagnéticas de polarização linear, propagando em unísono através do espaço livre são dados por $E_{1} = e^{-\jmath \pi (z - 0,25)} \hat{a_{x}} [\si{\volt/\meter}]$ e $E_{2} = ae^{-\jmath \pi (z - 0,25b)} \hat{a_{y}} [\si{\volt/\meter}]$ com z em metros e onde a e b são constantes. Determine para a onda eletromagnética resultante: o campo magnético instantâneo, a polarização da onda, o vetor de Poynting instantâneo e médio.  
+\item Os campos elétricos de duas ondas eletromagnéticas de polarização linear, propagando em unísono através do espaço livre são dados por $E_{1} = e^{-\jmath \pi (z - 0,25)} \hat{a}_{x} [\si{\volt/\meter}]$ e $E_{2} = ae^{-\jmath \pi (z - 0,25b)} \hat{a}_{y} [\si{\volt/\meter}]$ com z em metros e onde a e b são constantes. Determine para a onda eletromagnética resultante: o campo magnético instantâneo, a polarização da onda, o vetor de Poynting instantâneo e médio.  
   
 
     Dados: $a = 3$, $b = 1$
@@ -13,25 +13,32 @@ O campo magnético é determinado por:
 
 \begin{eqnarray*}
   \omega \mu_{0} \vec{H} & = &  \vec{k} \times \vec{E} \nonumber \\
-  \dfrac{k \mu_{0}}{\sqrt{\epsilon_{0}\mu_{0}}} \vec{H} & = & k\hat{a_{z}} \times (\hat{a_{x}} + 3\hat{a_{y}})e^{-\jmath (z - 0,25)\pi} \nonumber \\
-  \sqrt{\dfrac{\mu_{0}}{\epsilon_{0}}} \vec{H} & = & \left[ (\hat{a_{z}} \times \hat{a_{x}}) + (\hat{a_{z}} \times 3\hat{a_{y}}) \right]e^{-\jmath (z - 0,25)\pi} \nonumber \\
-  \vec{H} & = & \sqrt{\dfrac{\epsilon_{0}}{\mu_{0}}}e^{-\jmath (z - 0,25)\pi}\left(-3\hat{a_{x}} + \hat{a_{y}}\right) \nonumber
+  \dfrac{k \mu_{0}}{\sqrt{\epsilon_{0}\mu_{0}}} \vec{H} & = & k\hat{a}_{z} \times (\hat{a}_{x} + 3\hat{a}_{y})e^{-\jmath (z - 0,25)\pi} \nonumber \\
+  \sqrt{\dfrac{\mu_{0}}{\epsilon_{0}}} \vec{H} & = & \left[ (\hat{a}_{z} \times \hat{a}_{x}) + (\hat{a}_{z} \times 3\hat{a}_{y}) \right]e^{-\jmath (z - 0,25)\pi} \nonumber \\
+  \vec{H} & = & \sqrt{\dfrac{\epsilon_{0}}{\mu_{0}}}e^{-\jmath (z - 0,25)\pi}\left(-3\hat{a}_{x} + \hat{a}_{y}\right) \nonumber
 \end{eqnarray*}
 
-Como $\sqrt{\dfrac{\epsilon_{0}}{\mu_{0}}}$ $=$ $\dfrac{1}{120\pi}$, temos $\vec{H}$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a_{x}} + \dfrac{1}{3}\hat{a_{y}}\right)e^{-\jmath (z - 0,25)\pi} [\si{\ampere/\meter}]$. Com $k_{z} = \pi [\si{\radian/\meter}]$, temos $\omega = 3\pi \times 10^{8} [\si{\radian/\second}]$, assim $\vec{H}$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a_{x}} + \dfrac{1}{3}\hat{a_{y}}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\ampere/\meter}]$
+Como $\sqrt{\dfrac{\epsilon_{0}}{\mu_{0}}}$ $=$ $\dfrac{1}{120\pi}$, temos $\vec{H}$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a}_{x} + \dfrac{1}{3}\hat{a}_{y}\right)e^{-\jmath (z - 0,25)\pi} [\si{\ampere/\meter}]$. Com $k_{z} = \pi [\si{\radian/\meter}]$, temos $\omega = 3\pi \times 10^{8} [\si{\radian/\second}]$, assim $\vec{H}$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a}_{x} + \dfrac{1}{3}\hat{a}_{y}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\ampere/\meter}]$
 
-Seja o campo elétrico $\vec{E}$ dado por $\vec{E} = E_{0}x \hat{a_{x}} + E_{0}y \hat{ a_{y}}$  $=$ $e^{-\jmath (z - 0,25) \pi} \hat{a_{x}} + 3 e^{-\jmath (z - 0,25)\pi} \hat{a_{y}} [\si{\volt/\meter}]$, reescrevendo o campo elétrico temos $\vec{E} = (\hat{a_{x}} + A e^{\jmath \theta} \hat{a_{y}})e^{-\jmath k_{z} z}$, com $A = \dfrac{E_{0}y}{E_{0}x}$ $=$ $\dfrac{3 e^{-\jmath (z - 0,25)\pi}}{e^{-\jmath (z - 0,25) \pi}} = 3$, e $\theta = \phi_{y} - \phi{x}  = 0$ e $k_{z} = \pi$, logo $\vec{E} = (\hat{a_{x}} + 3 \hat{a_{y}})e^{-\jmath \pi z}$. A polarização da onda é linear, uma reta que passa pela origem e faz um ângulo $tg^{-1}(3) \approx 71.56\si{\degree}$ com o eixo horizontal.
+Seja o campo elétrico $\vec{E}$ dado por $\vec{E} = E_{0}x \hat{a}_{x} + E_{0}y \hat{ a_{y}}$  $=$ $e^{-\jmath (z - 0,25) \pi} \hat{a}_{x} + 3 e^{-\jmath (z - 0,25)\pi} \hat{a}_{y} [\si{\volt/\meter}]$, reescrevendo o campo elétrico temos $\vec{E} = (\hat{a}_{x} + A e^{\jmath \theta} \hat{a}_{y})e^{-\jmath k_{z} z}$, com $A = \dfrac{E_{0}y}{E_{0}x}$ $=$ $\dfrac{3 e^{-\jmath (z - 0,25)\pi}}{e^{-\jmath (z - 0,25) \pi}} = 3$, e $\theta = \phi_{y} - \phi{x}  = 0$ e $k_{z} = \pi$, logo $\vec{E} = (\hat{a}_{x} + 3 \hat{a}_{y})e^{-\jmath \pi z}$. A polarização da onda é linear, uma reta que passa pela origem e faz um ângulo $tg^{-1}(3) \approx 71.56\si{\degree}$ com o eixo horizontal.
 
-O vetor de Poynting instantâneo é dado por $\vec{P}(\vec{r},t)$ $=$ $\vec{E}(\vec{r},t) \times \vec{H}(\vec{r},t)$. No problema temos $\vec{E}(\vec{r},t)$ $=$ $\left(\hat{a_{x}} + 3\hat{a_{y}}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\volt/\meter}]$ e $\vec{H}(\vec{r},t)$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a_{x}} + \dfrac{1}{3}\hat{a_{y}}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\ampere/\meter}]$, logo:
+O vetor de Poynting instantâneo é dado por $\vec{P}(\vec{r},t)$ $=$ $\vec{E}(\vec{r},t) \times \vec{H}(\vec{r},t)$. No problema temos $\vec{E}(\vec{r},t)$ $=$ $\left(\hat{a}_{x} + 3\hat{a}_{y}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\volt/\meter}]$ e $\vec{H}(\vec{r},t)$ $=$ $\dfrac{1}{40\pi}\left(-\hat{a}_{x} + \dfrac{1}{3}\hat{a}_{y}\right)\cos[3\pi \times 10^{8}t - (z - 0,25)\pi] [\si{\ampere/\meter}]$, logo:
 
 \begin{eqnarray*}
   \vec{P}(\vec{r},t) & = & \vec{E}(\vec{r},t) \times \vec{H}(\vec{r},t) \nonumber \\
-  & = & \dfrac{1}{40\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi][(\hat{a_{x}} \times \dfrac{1}{3} \hat{a_{y}}) + (-\hat{a_{x}} + 3\hat{a_{y}})] \nonumber \\
-  & = & \dfrac{1}{40\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi](\dfrac{1}{3}\hat{a_{z}} + 3\hat{a_{z}}) \nonumber \\
-  \vec{P}(\vec{r},t) & = &  \dfrac{1}{12\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi] \hat{a_{z}} [\si{\watt/\meter^{2}}] \nonumber
+  & = & \dfrac{1}{40\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi][(\hat{a}_{x} \times \dfrac{1}{3} \hat{a}_{y}) + (-\hat{a}_{x} + 3\hat{a}_{y})] \nonumber \\
+  & = & \dfrac{1}{40\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi](\dfrac{1}{3}\hat{a}_{z} + 3\hat{a}_{z}) \nonumber \\
+  \vec{P}(\vec{r},t) & = &  \dfrac{1}{12\pi}\cos^{2}[3\pi \times 10^{8}t - (z - 0,25)\pi] \hat{a}_{z} [\si{\watt/\meter^{2}}] \nonumber
 \end{eqnarray*}
 
-Para o cálculo da potência média fazemos uso da notação fasorial, tal que ${\bf P}_{m} = \dfrac{1}{2}\left({\bf E} \times {\bf H}^{*} \right)$
+Para o cálculo da potência média fazemos uso da notação fasorial, tal que ${\bf P}_{m} = \dfrac{1}{2}\mathfrak{Re}\left({\bf E} \times {\bf H}^{*} \right)$:
+
+\begin{eqnarray*}  
+  {\bf P}_{m} & = & \dfrac{1}{2}\left[e^{-\jmath (z - 0,25)\pi}(\hat{a}_{x} + 3\hat{a}_{y}) \times \dfrac{e^{\jmath (z - 0,25)\pi}}{40\pi}\left(-\hat{a}_{x} + \dfrac{1}{3}\hat{a}_{y}\right)\right] \nonumber \\
+  & = & \dfrac{e^{-\jmath (z - 0,25)\pi} e^{\jmath (z - 0,25)\pi}}{80\pi} [(\hat{a}_{x} \times \dfrac{1}{3} \hat{a}_{y}) + \left(-\hat{a}_{x} + 3\hat{a}_{y}\right)] \nonumber \\
+  & = & \dfrac{1}{80\pi}\left(\dfrac{1}{3}\hat{a}_{z} + 3\hat{a}_{z}\right) \nonumber \\
+  & = & \dfrac{1}{24\pi} [\si{\watt/\meter^{2}}] \nonumber
+\end{eqnarray*}
 
 \end{enumerate}
 
