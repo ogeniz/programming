@@ -89,7 +89,7 @@ class ElectroMagneticWave(): # electromagnetic wave definition
               (self.__alpha,self.__beta,self.__tanperca))
     
 
-W = ElectroMagneticWave(freq = 5*10**7,eps = 81,sig = 4)
+W = ElectroMagneticWave(freq = 2*math.pi*10**7,eps = 81,sig = 4)
 W.getElectricField()
 pp = (W.getAlpha()**(-1)*0.001)/0.3679
 print(pp)
