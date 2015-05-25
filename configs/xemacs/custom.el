@@ -1,5 +1,5 @@
 (display-time)
-
+(delete-selection-mode)
 (custom-set-variables
  '(TeX-bar-LaTeX-buttons '(open-file save-buffer cut copy paste undo [separator nil] latex next-error view file bibtex clean latex-symbols-experimental nil)
 )
@@ -18,7 +18,6 @@
  '(cc-compilers-list '("gcc" "c89" "acc" "cc" "clang")
 )
  '(complex-buffers-menu-p t)
- '(delete-selection-mode t)
  '(dired-gnutar-program "tar" t)
  '(dired-ls-F-marks-symlinks t)
  '(dired-show-ls-switches t)

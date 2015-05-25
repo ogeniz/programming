@@ -69,8 +69,26 @@ Para o cálculo da potência média fazemos uso da notação fasorial, tal que $
   {\bf P}_{m} & = & \dfrac{1}{2}\left[e^{-\jmath (z - 0,25)\pi}(\hat{a}_{x} + 3\hat{a}_{y}) \times \dfrac{e^{\jmath (z - 0,25)\pi}}{40\pi}\left(-\hat{a}_{x} + \dfrac{1}{3}\hat{a}_{y}\right)\right] \nonumber \\
   & = & \dfrac{e^{-\jmath (z - 0,25)\pi} e^{\jmath (z - 0,25)\pi}}{80\pi} [(\hat{a}_{x} \times \dfrac{1}{3} \hat{a}_{y}) + \left(-\hat{a}_{x} + 3\hat{a}_{y}\right)] \nonumber \\
   & = & \dfrac{1}{80\pi}\left(\dfrac{1}{3}\hat{a}_{z} + 3\hat{a}_{z}\right) \nonumber \\
-  & = & \dfrac{1}{24\pi} [\si{\watt/\meter^{2}}] \nonumber
+  & = & \dfrac{1}{24\pi} \hat{a}_{z}[\si{\watt/\meter^{2}}] \nonumber
 \end{eqnarray*}
+
+\item Dados: $f = 5Ghz$, meio1 caracterizado por $\epsilon_{0}$, $\mu_{0}$ e $\sigma = 0$ e o meio2 por $6 \epsilon_{0}$, $\mu_{0}$, $\sigma = 2,5 \times 10^{-3}$ [\si{\siemens/\meter}]
+
+Para classificar o bloco de concreto, usamos o seguinte critério:
+\begin{itemize}
+  {\setlength\itemindent{25pt}}\item Se $\dfrac{\sigma}{\omega \epsilon}$ $<$ $0.01$, o material é um dielétrico
+  {\setlength\itemindent{25pt}}\item Se $0.01$ $<$ $\dfrac{\sigma}{\omega \epsilon}$ $<$ $100$, o material é quase condutor
+  {\setlength\itemindent{25pt}}\item Se $\dfrac{\sigma}{\omega \epsilon}$ $>$ $100$, o material é condutor
+\end{itemize}
+
+para o bloco de concreto temos:
+
+\begin{eqnarray*}
+  \dfrac{\sigma}{\omega \epsilon} & = & \dfrac{2,5 \times 10^{-3}}{\dfrac{\pi \times 10^{10} \times 10^{-9}}{6\pi}} \nonumber \\
+  \dfrac{\sigma}{\omega \epsilon} & \approx & 0,0015 \nonumber
+\end{eqnarray*}
+
+como $0.0015$ $<$ $0.01$, logo o bloco de concreto para as condições previamente dadas é um dielétrico.
 
 \end{enumerate}
 

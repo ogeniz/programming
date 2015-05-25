@@ -31,7 +31,7 @@ Host s0
 HostName 200.17.37.84
 IdentityFile ~/.ssh/id_rsa_ogeniz
 LogLevel INFO
-User ogeniz
+User gadelha
 
 Host s0_root
 HostName 200.17.37.84
@@ -58,3 +58,10 @@ IdentityFile ~/.ssh/id_rsa_root_gtel_key
 ProxyCommand ssh s0 nc %h %p
 User git
 LogLevel INFO
+
+Host cluster
+HostName 192.168.200.5
+IdentityFile ~/.ssh/id_rsa_ogeniz
+LogLevel INFO
+ProxyCommand ssh s0 nc %h %p
+User ogeniz

@@ -16,4 +16,12 @@
 (setq make-backup-files nil)
 (setq-default font-lock-maximum-decoration t)
 (fset 'yes-or-no-p 'y-or-n-p) ; Yes or no prompts accept short y or n
-(set-face-background 'default  "Gainsboro") ; frame background color
+(set-face-background 'default  "Peru") ; frame background color
+;;(set-face-background 'default  "Tan") ; frame background color
+;;(set-face-background 'default  "Moccasin") ; frame background color
+;; (set-face-background 'default  "Gainsboro") ; frame background color
+
+(require 'tex-site)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
