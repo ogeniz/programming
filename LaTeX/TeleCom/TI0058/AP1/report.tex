@@ -72,7 +72,11 @@ Para o cálculo da potência média fazemos uso da notação fasorial, tal que $
   & = & \dfrac{1}{24\pi} \hat{a}_{z}[\si{\watt/\meter^{2}}] \nonumber
 \end{eqnarray*}
 
-\item Dados: $f = 5Ghz$, meio1 caracterizado por $\epsilon_{0}$, $\mu_{0}$ e $\sigma = 0$ e o meio2 por $6 \epsilon_{0}$, $\mu_{0}$, $\sigma = 2,5 \times 10^{-3}$ [\si{\siemens/\meter}]
+\item Dados: $f = 1,6$ \si{\giga\hertz}
+
+\newpage
+
+\item Dados: $f = 5$ \si{\giga\hertz}, meio1 caracterizado por $\epsilon_{0}$, $\mu_{0}$ e $\sigma = 0$ e o meio2 por $6 \epsilon_{0}$, $\mu_{0}$, $\sigma = 2,5 \times 10^{-3}$ [\si{\siemens/\meter}]
 
 Para classificar o bloco de concreto, usamos o seguinte critério:
 \begin{itemize}
@@ -89,6 +93,22 @@ para o bloco de concreto temos:
 \end{eqnarray*}
 
 como $0.0015$ $<$ $0.01$, logo o bloco de concreto para as condições previamente dadas é um dielétrico.
+
+Para o cálculo da taxa de onda estacionária no ar seguimos a seguinte relação: TOE $=$ $\dfrac{|E|_{M}}{|E|_{m}}$ $=$$\dfrac{|E|^{+}_{0} + |E|^{-}_{0}}{|E|^{+}_{0} - |E|^{-}_{0}}$, com o coeficiente de reflexão definido como $|\Gamma|$ $=$ $\left|\dfrac{E^{-}_{0}}{E^{+}_{0}}\right|$, substituindo temos: TOE $=$ $\dfrac{1 + |\Gamma|}{1 - |\Gamma|}$. Em termos das impedâncias dos meios separados pela interface temos que o $\Gamma$ $=$ $\dfrac{Z_{2} - Z_{1}}{Z_{2} + Z_{1}}$, como $Z$ $=$ $\sqrt{\dfrac{\mu_{0}}{\epsilon_{0}}}$$\sqrt{\dfrac{\mu_{r}}{\epsilon_{r}}}$, assim $Z$ $=$ $120\pi \sqrt{\dfrac{\mu_{r}}{\epsilon_{r}}}$.  Como o meio 1 é o ar, logo $Z_{1}$ $=$ $120\pi$ [\si{\ohm}] e $Z_{2}$ $=$ $\dfrac{120\pi}{\sqrt{6}}$ [\si{\ohm}], assim:
+
+\begin{eqnarray*}
+  \Gamma & = & \dfrac{\dfrac{120\pi}{\sqrt{6}} - 120\pi}{\dfrac{120\pi}{\sqrt{6}} + 120\pi} \nonumber \\
+  \Gamma & = &\dfrac{\dfrac{1}{\sqrt{6}} - 1}{\dfrac{1}{\sqrt{6}} + 1} \nonumber \\
+  \Gamma & \approx & -0,42 \nonumber
+\end{eqnarray*}
+
+Substituindo, temos:
+
+\begin{eqnarray*}
+  TOE & = & \dfrac{1 + |\Gamma|}{1 - |\Gamma|} \nonumber \\
+  TOE & = & \dfrac{1 + 0.42}{1 - 0.42} \nonumber \\
+  TOE & \approx & 2,44
+\end{eqnarray*}
 
 \end{enumerate}
 
