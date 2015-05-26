@@ -53,10 +53,10 @@ class ElectroMagneticWave(): # electromagnetic wave definition
         rad2dgr = 180.0/math.pi
         omega = 2*math.pi*freq
         self.__Media = Media(epsilon = eps,mu = mur,sigma = sig)
-        self.__impedance = cmath.sqrt(1j*freq*self.__Media.getMu()/(self.__Media.getSigma() + 1j*freq*self.__Media.getEpsilon()))
-        self.__alpha =  omega*math.sqrt( (0.5*self.__Media.getMu()*self.__Media.getEpsilon()) * (math.sqrt(1+(self.__Media.getSigma()/(omega*self.__Media.getEpsilon()))**2) - 1) )
-        self.__beta =  omega*math.sqrt( (0.5*self.__Media.getMu()*self.__Media.getEpsilon()) * (math.sqrt(1+(self.__Media.getSigma()/(omega*self.__Media.getEpsilon()))**2) + 1) )
-        self.__tanperca = math.atan(self.__Media.getSigma()/(freq*self.__Media.getEpsilon()))
+        self.__impedance = cmath.sqrt(1j*omega*self.__Media.getMu()/(self.__Media.getSigma() + 1j*omega*self.__Media.getEpsilon()))
+        self.__tanperca = math.atan(self.__Media.getSigma()/(omega*self.__Media.getEpsilon()))
+        self.__alpha = omega*math.sqrt(self.__Media.getMu()*self.__Media.getEpsilon()/math.cos(self.__tanperca))*math.sin(self.__tanperca*0.5)
+        self.__beta = omega*math.sqrt(self.__Media.getMu()*self.__Media.getEpsilon()/math.cos(self.__tanperca))*math.cos(self.__tanperca*0.5)
         self.__electricfield = Wave(module = wmod,frequency = freq,phase = phs)
         self.__magneticfield = Wave(module = (wmod/abs(self.__impedance)),frequency = freq,phase = (self.__electricfield.getPhase() + cmath.phase(self.__impedance)*rad2dgr))
         # end of default constructor
@@ -89,7 +89,8 @@ class ElectroMagneticWave(): # electromagnetic wave definition
               (self.__alpha,self.__beta,self.__tanperca))
     
 
-W = ElectroMagneticWave(freq = 2*math.pi*10**7,eps = 81,sig = 4)
+W = ElectroMagneticWave(freq = 5*10**9,eps = 6,sig = 2.5*10**(-3))
 W.getElectricField()
+W.getMagneticField()
 pp = (W.getAlpha()**(-1)*0.001)/0.3679
 print(pp)
