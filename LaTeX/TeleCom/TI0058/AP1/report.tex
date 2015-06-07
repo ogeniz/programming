@@ -125,17 +125,78 @@ Para a porcentagem da potência transmitida, temos P$_{pt}$ $=$ $\dfrac{\vec{P}_
 
 \item 
 
+\newpage
+
 \item Dados f $=$ $2 \times 10^{5}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $500\si{\micro}$[\si{\volt/\meter}] com polarização paralela. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o mar ($\epsilon_{r} = 80$, $\mu_{r} = 1$, $\sigma = 3$[\si{\siemens/\meter}]). Calculando $\dfrac{\sigma}{\omega\epsilon}$ $=$ $\dfrac{3}{4\pi \times 10^{5} \times \dfrac{10^{-9}}{36\pi}}$ $=$ $27 \times 10^{4}$, logo o mar é um bom condutor, assim podemos aproximar Z$_{2}$ por $\sqrt{\dfrac{\omega\mu}{\sigma}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{4\pi \times 10^{5} \times 4\pi \times 10^{-7}}{3}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{8\pi^{2}}{75}}e^{\jmath\frac{\pi}{4}}$[\si{\ohm}]
 
-Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem da impedância dos meios e dos ângulos de incidência e transmissão. Dada a incidência oblíqua do campo elétrico na interface temos que $\gamma_{1}\sin(\theta_i) = \gamma_{1}\sin(\theta_{r}) = \gamma_{2}\sin(\theta_{t})$. Onde $\theta_{t}$ $=$ $\sin^{-1}\left[\dfrac{\gamma_{1}}{\gamma_{2}}\sin(\theta_{i})\right]$. Com $\gamma_{1} = \dfrac{\omega}{c} = \dfrac{4\pi \times 10^{5}}{3 \times 10^{8}}$ $\Rightarrow$ $\gamma_{1} = \dfrac{\pi}{750}$[\si{\radian/\meter}], $\gamma_{2}$ $=$ $\sqrt{\dfrac{\omega\mu\sigma}{2}}(1 + j)$ dado que em um bom condutor a atenuação [\si{\neper/\meter}], parte real, é igual a constante de fase [\si{\radian/\meter}], parte imaginária, assim $\gamma_{2}$ $=$ $\dfrac{\pi\sqrt{12}}{5}e^{\jmath\frac{\pi}{4}}$. Logo $\theta_{t} = \sin^{-1}\left(\dfrac{\gamma_{1}}{\mathfrak{Re}[\gamma_{2}]}\sin(\theta_{i})\right)$ $\Rightarrow$ $\theta_{t} \approx 0,077$\si{\degree}. Segue que $\Gamma = \dfrac{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) - Z_{1}\cos(\theta_{i})}{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) + Z_{1}\cos(\theta_{i})}$, com $\Gamma = \dfrac{\sqrt{\dfrac{16\pi^{2}}{300}}\cos(0,077) - 120\pi\cos(30)}{\sqrt{\dfrac{16\pi^{2}}{300}}\cos(0,077) + 120\pi\cos(30)}$ $\Rightarrow$ $\Gamma \approx -0,99556$. O coeficiente de transmissão T é dado por $\dfrac{2\mathfrak{Re}[Z_{2}]\cos(\theta_{i})}{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) + Z_{1}\cos(\theta_{i})} \approx 0,00384$.
+Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem da impedância dos meios e dos ângulos de incidência e transmissão. Dada a incidência oblíqua da onda plana na interface temos que $\gamma_{1}\sin(\theta_i) = \gamma_{1}\sin(\theta_{r}) = \gamma_{2}\sin(\theta_{t})$. Onde $\theta_{t}$ $=$ $\sin^{-1}\left[\dfrac{\gamma_{1}}{\gamma_{2}}\sin(\theta_{i})\right]$. Com $\gamma_{1} = \dfrac{\omega}{c} = \dfrac{4\pi \times 10^{5}}{3 \times 10^{8}}$ $\Rightarrow$ $\gamma_{1} = \dfrac{\pi}{750}$[\si{\radian/\meter}], $\gamma_{2}$ $=$ $\sqrt{\dfrac{\omega\mu\sigma}{2}}(1 + j)$ dado que em um bom condutor a atenuação [\si{\neper/\meter}], parte real, é igual a constante de fase [\si{\radian/\meter}], parte imaginária, assim $\gamma_{2}$ $=$ $\dfrac{\pi\sqrt{12}}{5}e^{\jmath\frac{\pi}{4}}$. Logo $\theta_{t} = \sin^{-1}\left(\dfrac{\dfrac{\pi}{750}}{\dfrac{\pi\sqrt{6}}{5}}\sin(30)\right)$ $\Rightarrow$ $\theta_{t} \approx 0,077$\si{\degree}. Segue que:
+
+\begin{eqnarray*}
+\Gamma_{\parallel} & = & \dfrac{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) - Z_{1}\cos(\theta_{i})}{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) + Z_{1}\cos(\theta_{i})} \nonumber \\
+& = & \dfrac{\sqrt{\dfrac{16\pi^{2}}{300}}\cos(0,077) - 120\pi\cos(30)}{\sqrt{\dfrac{16\pi^{2}}{300}}\cos(0,077) + 120\pi\cos(30)} \nonumber \\
+\Gamma & \approx & -0,99556 \nonumber \\
+T_{\parallel} & = & \dfrac{2\mathfrak{Re}[Z_{2}]\cos(\theta_{i})}{\mathfrak{Re}[Z_{2}]\cos(\theta_{t}) + Z_{1}\cos(\theta_{i})} \nonumber \\
+& = & \dfrac{\sqrt{\dfrac{64\pi^{2}}{300}}\cos(30)}{\sqrt{\dfrac{16\pi^{2}}{300}}\cos(0,077) + 120\pi\cos(30)} \nonumber \\
+T_{\parallel} & \approx & 0,00384 \nonumber
+\end{eqnarray*}
+
 
 O módulo dos campos elétricos e magnéticos refletidos e transmitidos em função do campo elétrico incidente são dados por:
 
 \begin{eqnarray*}
 E^{r}_{||} & = & |\Gamma| E^{i}_{||} = (5 \times 0,99556) \times 10^{-4} = 497,78\si{\micro}[\si{\volt/\meter}] \nonumber \\
-H^{r}_{||} & = & \dfrac{|\Gamma| E^{i}_{||}}{Z_{1}} = \dfrac{(5 \times 0,99556) \times 10^{-4}}{120\pi} = 1,3204\si{\micro}[\si{\ampere/\meter}]\nonumber \\
+H^{r}_{||} & = & \dfrac{|\Gamma| E^{i}_{||}}{Z_{1}} = \dfrac{(5 \times 0,99556) \times 10^{-4}}{120\pi} = 1320,4\si{\nano}[\si{\ampere/\meter}]\nonumber \\
 E^{t}_{||} & = & T E^{i}_{||} = (5 \times 384) \times 10^{-9} = 1920\si{\nano}[\si{\volt/\meter}]\nonumber \\
 H^{t}_{||} & = & \dfrac{T E^{i}_{||}}{\mathfrak{Re}[Z_{2}]} = \dfrac{(5 \times 384) \times 10^{-9}}{\sqrt{\dfrac{16\pi^{2}}{300}}} = 2646,37\si{\nano}[\si{\volt/\meter}]\nonumber
+\end{eqnarray*}
+
+O ângulo de transmissão, previamente calculado, é $\theta_{t} \approx 0,077$\si{\degree}.
+
+\newpage
+
+\item Dados f $=$ $2 \times 10^{4}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $100\si{\micro}$[\si{\volt/\meter}] com polarização perpendicular. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o poliestileno ($\epsilon_{r} = 2$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{2}$ $=$ $\sqrt{\dfrac{\mu_{r}\mu_{0}}{\epsilon_{r}\epsilon_{0}}}$ $=$ $\dfrac{120\pi}{\sqrt{2}}$ $=$ $60\sqrt{2}\pi$[\si{\ohm}].
+
+Dada a incidência oblíqua do campo elétrico na interface temos $\gamma_{1}\sin(\theta_i) = \gamma_{1}\sin(\theta_{r}) = \gamma_{2}\sin(\theta_{t})$. Onde $\theta_{t}$ $=$ $\sin^{-1}\left[\dfrac{\gamma_{1}}{\gamma_{2}}\sin(\theta_{i})\right]$. Com $\gamma_{1} = \dfrac{\omega}{c} = \dfrac{4\pi \times 10^{5}}{3 \times 10^{8}}$ $\Rightarrow$ $\gamma_{1} = \dfrac{\pi}{750}$[\si{\radian/\meter}], com $\gamma_{2} = \omega\sqrt{2\mu_{0}\epsilon_{0}} \Rightarrow \dfrac{\omega}{c}\sqrt{2}$ $\Rightarrow$ $\gamma_{2}$ $=$ $\dfrac{4\pi \times 10^{5}}{3\times 10^{8}}\sqrt{2}$ $\Rightarrow$ $\gamma_{2} = \dfrac{\sqrt{2}}{750}\pi$[\si{\radian/\meter}]. Logo $\theta_{t}$ $=$ $\sin^{-1}\left(\dfrac{\dfrac{\pi}{750}}{\dfrac{\pi\sqrt{2}}{750}}\sin(30)\right)$ $\Rightarrow$ $\theta_{t}$ $\approx$ $20,70$\si{\degree}.
+
+Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem das caracteristicas dos meios e do ângulo de incidência. Como os meios são não-magnéticos, $\mu$ $=$ $\mu_{0}$, e sem perdas, $\sigma = 0$, segue que:
+
+\begin{eqnarray*}
+\Gamma_{\perp} & = & \dfrac{\cos(\theta_{i}) - \sqrt{\dfrac{\epsilon_{2}}{\epsilon_{1}}}\sqrt{1 - \left(\dfrac{\epsilon_{1}}{\epsilon_{2}}\right)\sin^{2}(\theta_{i})}}{\cos(\theta_{i}) + \sqrt{\dfrac{\epsilon_{2}}{\epsilon_{1}}}\sqrt{1 - \left(\dfrac{\epsilon_{1}}{\epsilon_{2}}\right)\sin^{2}(\theta_{i})}} \nonumber \\
+& = & \dfrac{\cos(30) - \sqrt{2}\sqrt{1 - \dfrac{\sin^{2}(30)}{2}}}{\cos(30) + \sqrt{2}\sqrt{1 - \dfrac{\sin^{2}(30)}{2}}}\nonumber \\
+\Gamma_{\perp} & \approx & -0,2087 \nonumber \\
+& & \\
+T_{\perp} & = &\dfrac{2\cos(\theta_{i})}{\cos(\theta_{i}) + \sqrt{\dfrac{\epsilon_{2}}{\epsilon_{1}}}\sqrt{1 - \left(\dfrac{\epsilon_{1}}{\epsilon_{2}}\right)\sin^{2}(\theta_{i})}} \nonumber \\
+& = & \dfrac{2\cos(30)}{\cos(30) + \sqrt{2}\sqrt{1 - \dfrac{\sin^{2}(30)}{2}}}\nonumber \\
+T_{\perp} & \approx & 0,7912 \nonumber
+\end{eqnarray*}
+
+O módulo dos campos elétricos e magnéticos refletidos e transmitidos em função do campo elétrico incidente são dados por:
+
+\begin{eqnarray*}
+E^{r}_{\perp} & = & |\Gamma| E^{i}_{\perp} = 0,2087 \times 10^{-4} = 20,87\si{\micro}[\si{\volt/\meter}] \nonumber \\
+H^{r}_{\perp} & = & \dfrac{|\Gamma| E^{i}_{\perp}}{Z_{1}} = \dfrac{0,2087 \times 10^{-4}}{120\pi} = 55.35\si{\nano}[\si{\ampere/\meter}]\nonumber \\
+& & \\
+E^{t}_{\perp} & = & T E^{i}_{\perp} = 0,7912 \times 10^{-4} = 79,12\si{\micro}[\si{\volt/\meter}]\nonumber \\
+H^{t}_{\perp} & = & \dfrac{T E^{i}_{\perp}}{Z_{2}} = \dfrac{0,7912 \times 10^{-4}}{60\sqrt{2}\pi} = 296,80\si{\nano}[\si{\volt/\meter}]
+\end{eqnarray*}
+
+Para o cálculo do coeficiente de transmissão de energia, a razão entre $\dfrac{P^{t}_{m}}{P^{i}_{m}}$, temos:
+
+\begin{eqnarray*}
+|\vec{P}_{m}^{i}| & = & \mathfrak{Re}\left[\dfrac{1}{Z_{1}}\right] \dfrac{|E_{i}|^2}{2} \\
+|\vec{P}_{m}^{i}| & = & \dfrac{(10^{-4})^{2}}{120\pi} \\
+|\vec{P}_{m}^{i}| & = & \dfrac{1}{120\pi} \times 10^{-8} [\si{\watt/\meter^{2}}] \\
+& & \\
+|\vec{P}_{m}^{t}| & = & \mathfrak{Re}\left[\dfrac{1}{Z_{2}}\right] \dfrac{|T E_{i}|^2}{2} \\
+|\vec{P}_{m}^{t}| & = & \dfrac{(0,7912 \times 10^{-4})^{2}}{120\sqrt{2}\pi} \\
+|\vec{P}_{m}^{t}| & = & \dfrac{0,7912}{120\sqrt{2}\pi} \times 10^{-8} [\si{\watt/\meter^{2}}]
+\end{eqnarray*}
+
+Logo o coeficiente de transmissão de energia é:
+\begin{eqnarray*}
+\left|\dfrac{\vec{P}_{m}^{t}}{\vec{P}_{m}^{i}}\right| & = & \dfrac{\dfrac{0,7912}{120\sqrt{2}\pi} \times 10^{-8}}{\dfrac{1}{120\pi} \times 10^{-8}} \\
+\left|\dfrac{\vec{P}_{m}^{t}}{\vec{P}_{m}^{i}}\right| & = & \dfrac{0,7912}{\sqrt{2}} \\
+\left|\dfrac{\vec{P}_{m}^{t}}{\vec{P}_{m}^{i}}\right| & \approx & 0,5594
 \end{eqnarray*}
 
 \end{enumerate}
