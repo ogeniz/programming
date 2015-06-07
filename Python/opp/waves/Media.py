@@ -22,5 +22,5 @@ class Media: # media class definition
     def getSigma(self):
         return self.__sigma
     def printMedia(self):
-        print("epsilon (F/m) = %.1f e0 mu (H/m) = %.1f mu0 sigma = %.1f (Siemens)" %
+        print("epsilon (F/m) = %f e0 mu (H/m) = %f mu0 sigma = %f (Siemens)" %
               (self.getEpsilonr(),self.getMur(),self.getSigma()))

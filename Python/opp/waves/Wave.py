@@ -11,13 +11,13 @@ class Wave: # wave class definition
     def setFrequency(self,value):
         self.__frequency = 2.0*mp.pi*value # rad/s
     def setPhase(self,value):
-        self.__phase = value*(mp.pi/180) # rad
+        self.__phase = mp.radians(value) # rad
     def getFrequency(self):
         return self.__frequency*0.5/mp.pi# hz
     def getModule(self):
         return self.__module
     def getPhase(self):
-        return self.__phase*180.0/mp.pi # degrees
+        return mp.degrees(self.__phase) # degrees
     def printWave(self):
-        print("module = %.3f frequency = %.2f (Hz) phase = %.2f (degrees)" %
+        print("module = %.9f frequency = %f (Hz) phase = %f (degrees)" %
               (self.getModule(),self.getFrequency(),self.getPhase()))
