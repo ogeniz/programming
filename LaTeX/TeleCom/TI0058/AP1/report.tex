@@ -40,7 +40,7 @@
 
 \begin{enumerate}[1.]
 
-\item Dados: $a = 3$, $b = 1$
+\item Dados: $a = 3$, $b = 1$  % 1a.Questão
 
 O campo magnético é determinado por:
 
@@ -75,11 +75,27 @@ Para o cálculo da potência média fazemos uso da notação fasorial, tal que $
 
 \newpage
 
-\item Dados: $f = 1,6$ \si{\giga\hertz}
+\item Dados: $f = 1,6$ \si{\giga\hertz}, $\alpha = 3,25$[\si{\decibel/\centi\metre}] $\Rightarrow$ $\alpha = 325$[\si{\decibel/\metre}], com $1$[\si{\decibel/\meter}] $=$ $0,115128$[\si{\neper/\meter}]. % 2a.Questão
+
+Convertendo $\alpha$ de (\si{\decibel/\metre}) para (\si{\neper/\meter}), temos $325$[\si{\decibel/\metre}] $=$ $37,41$ [\si{\neper/\meter}]. Para determinar $\epsilon$ e $\sigma$, com $\mu = \mu_{0}$, do tecido usamos o sistema não-linear de equações, que relaciona os parâmetros constitutivos do meio com os respectivos $\alpha$ e $\beta$ da onda plana no meio.
+
+\begin{eqnarray*}
+(-\mu\epsilon)\omega^{2} & = & \alpha^{2} - \beta^{2} \\
+\epsilon & = & \dfrac{\beta^{2} - \alpha^{2}}{\mu\omega^{2}} \\
+\epsilon & = & \dfrac{260^{2} - 37,41^{2}}{4\pi \times 10^{-7} \times 10,24\pi^{2} \times 10^{18}} \\
+\epsilon & = & \dfrac{260^{2} - 37,41^{2}}{40,96\pi^{3} \times 10^{11}} \\ 
+\epsilon & \approx & 0,5212\si{\nano}[\si{\farad/\meter}] \\
+& & \\
+\mu\sigma\omega & = & 2\alpha\beta \\
+\sigma & = & \dfrac{2\alpha\beta}{\mu\omega} \\
+\sigma & = & \dfrac{2 \times (37,41 \times 260)}{4\pi \times 10^{-7} \times 3,2\pi \times 10^{9}} \\
+\sigma & = & \dfrac{2 \times (37,41 \times 260)}{1280\pi^{2}} \\
+\sigma & \approx & 1,5227 [\si{\siemens/\meter}]
+\end{eqnarray*}
 
 \newpage
 
-\item Dados: $f = 5$ \si{\giga\hertz}, meio1 caracterizado por $\epsilon_{0}$, $\mu_{0}$ e $\sigma = 0$ e o meio2 por $6 \epsilon_{0}$, $\mu_{0}$, $\sigma = \dfrac{2,5}{10^{3}}$ [\si{\siemens/\meter}]
+\item Dados: $f = 5$ \si{\giga\hertz}, meio1 caracterizado por $\epsilon_{0}$, $\mu_{0}$ e $\sigma = 0$ e o meio2 por $6 \epsilon_{0}$, $\mu_{0}$, $\sigma = \dfrac{2,5}{10^{3}}$ [\si{\siemens/\meter}]. % 3a.Questão 
 
 Para classificar o bloco de concreto, usamos o seguinte critério:
 \begin{itemize}
@@ -123,11 +139,32 @@ Para a porcentagem da potência transmitida, temos P$_{pt}$ $=$ $\dfrac{\vec{P}_
 
 \newpage
 
-\item 
+\item Dados: Os parâmetros constitutivos dos meios ($\epsilon^{1}_{r} = 6$, $\mu^{1}_{r} = 1$, $\sigma^{1} = 0$), ($\epsilon^{2}_{r}$ $=$ ?, $\mu^{2}_{r} = 1$, $\sigma^{2} = 0$) e ($\epsilon^{3}_{r} = 12$, $\mu^{2}_{r} = 1$, $\sigma^{3} = 0$). Com uma onda plana, na frequência f $=$ $3 \times 10^{9}$[\si{\hertz}], incidindo perpendicularmente sobre o meio 1, através do meio 2 em direção ao meio 3% 4a.Questão
+
+Devemos determinar a espessura do meio 2, para que não ocorra reflexão da onda incidente de volta ao meio 1. Isto ocorre se, e somente se, o coeficiente de reflexão entre o meios 2 e 3 é nulo, ou seja, a energia que é transferida do meio 1 para o meio 2 é completamente transferida para o meio 3. Assim, $\Gamma_{2} = \dfrac{Z_{3} - Z_{2}}{Z_{3} + Z_{2}}$ $e^{-\jmath 2k_{2}d}$ $=$ $0$ $\Rightarrow$ $(Z_{3} - Z_{2}) e^{-\jmath 2k_{2}d} = 0$. Isto é verdadeiro se, e somente se, $Z_{3} = Z_{2}$. Isto é:
+
+\begin{eqnarray*}
+\sqrt{\dfrac{\mu^{2}_{r}\mu_{0}}{\epsilon^{2}_{r}\epsilon_{0}}} & = & \sqrt{\dfrac{\mu^{3}_{r}\mu_{0}}{\epsilon^{3}_{r}\epsilon_{0}}} \\
+120\pi\dfrac{\mu^{2}_{r}}{\epsilon^{2}_{r}} & = & 120\pi\dfrac{\mu^{3}_{r}}{\epsilon^{3}_{r}} \\
+\epsilon^{2}_{r} & = & \epsilon^{3}_{r} \\
+\epsilon^{2}_{r} & = & 12
+\end{eqnarray*}
+
+A espessura do meio 2 é determinado por d $=$ $n\dfrac{\lambda_{2}}{4}$, onde $\lambda_{2}$ = $\dfrac{2\pi}{k_{2}}$ é o comprimento da onda no meio 2 e $n$ é um múltiplo par de $\pi$. Assim, como desejamos encontrar a menor espessura possível do meio 2 para que não ocorra a reflexão da onda incidente para o meio 1,temos $n = 2$. Logo:
+
+\begin{eqnarray*}
+d & = & \dfrac{4\pi}{4k_{2}} \\
+& = & \dfrac{\pi}{k_{2}} \\
+& = & \dfrac{\pi}{\dfrac{\omega}{c}\sqrt{12}} \\
+& = & \dfrac{\pi c}{\omega \sqrt{12}} \\
+& = & \dfrac{3\pi \times 10^{8}}{12\sqrt{3}\pi \times 10^{9}} \\
+d & \approx & 14,43 \si{\milli\meter}
+\end{eqnarray*}
+
 
 \newpage
 
-\item Dados f $=$ $2 \times 10^{5}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $500\si{\micro}$[\si{\volt/\meter}] com polarização paralela. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o mar ($\epsilon_{r} = 80$, $\mu_{r} = 1$, $\sigma = 3$[\si{\siemens/\meter}]). Calculando $\dfrac{\sigma}{\omega\epsilon}$ $=$ $\dfrac{3}{4\pi \times 10^{5} \times \dfrac{10^{-9}}{36\pi}}$ $=$ $27 \times 10^{4}$, logo o mar é um bom condutor, assim podemos aproximar Z$_{2}$ por $\sqrt{\dfrac{\omega\mu}{\sigma}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{4\pi \times 10^{5} \times 4\pi \times 10^{-7}}{3}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{8\pi^{2}}{75}}e^{\jmath\frac{\pi}{4}}$[\si{\ohm}]
+\item Dados f $=$ $2 \times 10^{5}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $500\si{\micro}$[\si{\volt/\meter}] com polarização paralela. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o mar ($\epsilon_{r} = 80$, $\mu_{r} = 1$, $\sigma = 3$[\si{\siemens/\meter}]). Calculando $\dfrac{\sigma}{\omega\epsilon}$ $=$ $\dfrac{3}{4\pi \times 10^{5} \times \dfrac{10^{-9}}{36\pi}}$ $=$ $27 \times 10^{4}$, logo o mar é um bom condutor, assim podemos aproximar Z$_{2}$ por $\sqrt{\dfrac{\omega\mu}{\sigma}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{4\pi \times 10^{5} \times 4\pi \times 10^{-7}}{3}}(1 + \jmath)$ $=$ $\sqrt{\dfrac{8\pi^{2}}{75}}e^{\jmath\frac{\pi}{4}}$[\si{\ohm}] % 5a.Questão
 
 Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem da impedância dos meios e dos ângulos de incidência e transmissão. Dada a incidência oblíqua da onda plana na interface temos que $\gamma_{1}\sin(\theta_i) = \gamma_{1}\sin(\theta_{r}) = \gamma_{2}\sin(\theta_{t})$. Onde $\theta_{t}$ $=$ $\sin^{-1}\left[\dfrac{\gamma_{1}}{\gamma_{2}}\sin(\theta_{i})\right]$. Com $\gamma_{1} = \dfrac{\omega}{c} = \dfrac{4\pi \times 10^{5}}{3 \times 10^{8}}$ $\Rightarrow$ $\gamma_{1} = \dfrac{\pi}{750}$[\si{\radian/\meter}], $\gamma_{2}$ $=$ $\sqrt{\dfrac{\omega\mu\sigma}{2}}(1 + j)$ dado que em um bom condutor a atenuação [\si{\neper/\meter}], parte real, é igual a constante de fase [\si{\radian/\meter}], parte imaginária, assim $\gamma_{2}$ $=$ $\dfrac{\pi\sqrt{12}}{5}e^{\jmath\frac{\pi}{4}}$. Logo $\theta_{t} = \sin^{-1}\left(\dfrac{\dfrac{\pi}{750}}{\dfrac{\pi\sqrt{6}}{5}}\sin(30)\right)$ $\Rightarrow$ $\theta_{t} \approx 0,077$\si{\degree}. Segue que:
 
@@ -154,11 +191,11 @@ O ângulo de transmissão, previamente calculado, é $\theta_{t} \approx 0,077$\
 
 \newpage
 
-\item Dados f $=$ $2 \times 10^{4}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $100\si{\micro}$[\si{\volt/\meter}] com polarização perpendicular. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o poliestileno ($\epsilon_{r} = 2$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{2}$ $=$ $\sqrt{\dfrac{\mu_{r}\mu_{0}}{\epsilon_{r}\epsilon_{0}}}$ $=$ $\dfrac{120\pi}{\sqrt{2}}$ $=$ $60\sqrt{2}\pi$[\si{\ohm}].
+\item Dados f $=$ $2 \times 10^{4}$[\si{\hertz}] e $\theta_{i}$ $=$ $30$\si{\degree}, com $|\vec{E}_{i}|$ $=$ $100\si{\micro}$[\si{\volt/\meter}] com polarização perpendicular. A onda plana através do ar ($\epsilon_{r} = 1$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{1} = 120\pi$[\si{\ohm}], incide sobre o poliestireno ($\epsilon_{r} = 2$, $\mu_{r} = 1$, $\sigma = 0$) com Z$_{2}$ $=$ $\sqrt{\dfrac{\mu_{r}\mu_{0}}{\epsilon_{r}\epsilon_{0}}}$ $=$ $\dfrac{120\pi}{\sqrt{2}}$ $=$ $60\sqrt{2}\pi$[\si{\ohm}]. % 6a.Questão
 
 Dada a incidência oblíqua do campo elétrico na interface temos $\gamma_{1}\sin(\theta_i) = \gamma_{1}\sin(\theta_{r}) = \gamma_{2}\sin(\theta_{t})$. Onde $\theta_{t}$ $=$ $\sin^{-1}\left[\dfrac{\gamma_{1}}{\gamma_{2}}\sin(\theta_{i})\right]$. Com $\gamma_{1} = \dfrac{\omega}{c} = \dfrac{4\pi \times 10^{5}}{3 \times 10^{8}}$ $\Rightarrow$ $\gamma_{1} = \dfrac{\pi}{750}$[\si{\radian/\meter}], com $\gamma_{2} = \omega\sqrt{2\mu_{0}\epsilon_{0}} \Rightarrow \dfrac{\omega}{c}\sqrt{2}$ $\Rightarrow$ $\gamma_{2}$ $=$ $\dfrac{4\pi \times 10^{5}}{3\times 10^{8}}\sqrt{2}$ $\Rightarrow$ $\gamma_{2} = \dfrac{\sqrt{2}}{750}\pi$[\si{\radian/\meter}]. Logo $\theta_{t}$ $=$ $\sin^{-1}\left(\dfrac{\dfrac{\pi}{750}}{\dfrac{\pi\sqrt{2}}{750}}\sin(30)\right)$ $\Rightarrow$ $\theta_{t}$ $\approx$ $20,70$\si{\degree}.
 
-Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem das caracteristicas dos meios e do ângulo de incidência. Como os meios são não-magnéticos, $\mu$ $=$ $\mu_{0}$, e sem perdas, $\sigma = 0$, segue que:
+Para determinarmos o módulo dos campos elétricos e magnéticos refletidos e transmitidos devemos calcular os coeficientes de reflexão $\Gamma$ e transmissão $T$ que dependem das características dos meios e do ângulo de incidência. Como os meios são não-magnéticos, $\mu$ $=$ $\mu_{0}$, e sem perdas, $\sigma = 0$, segue que:
 
 \begin{eqnarray*}
 \Gamma_{\perp} & = & \dfrac{\cos(\theta_{i}) - \sqrt{\dfrac{\epsilon_{2}}{\epsilon_{1}}}\sqrt{1 - \left(\dfrac{\epsilon_{1}}{\epsilon_{2}}\right)\sin^{2}(\theta_{i})}}{\cos(\theta_{i}) + \sqrt{\dfrac{\epsilon_{2}}{\epsilon_{1}}}\sqrt{1 - \left(\dfrac{\epsilon_{1}}{\epsilon_{2}}\right)\sin^{2}(\theta_{i})}} \nonumber \\
@@ -206,4 +243,5 @@ Logo o coeficiente de transmissão de energia é:
 %%% TeX-master: "../main"
 %%% End: 
 
-%  LocalWords:  ae Poynting rms pt fasorial Re pr
+%  LocalWords:  ae Poynting rms pt fasorial Re pr não-linear
+%  LocalWords:  não-magnéticos
