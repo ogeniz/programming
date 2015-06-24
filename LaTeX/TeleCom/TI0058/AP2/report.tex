@@ -30,5 +30,33 @@ Comprovar usando a carta de Smith.
 \item Projete duas redes de casamento uma por toco paralelo em aberto e outra por toco paralelo em curto para casar uma carga Z$_{L} = (80 + \jmath 100)$\si{\ohm} com uma LT com impedância de Z$_{0} = 50$\si{\ohm}. Supondo agora que a carga mudou para Z$_{L} = (85 - \jmath 100)$\si{\ohm}, determinar o coeficiente de reflexão visto na rede de casamento. Entregar as cartas de Smith utilizadas.
 \end{enumerate}
 
+\newpage
 
-% LocalWords:  Smith pt max LT
+\begin{center}\fbox{\LARGE Respostas}\end{center}
+
+
+\vspace*{1.5cm}
+
+\begin{enumerate}[1.]
+% Resposta 1a. Questão
+\item A linha de transmissão, no problema, é sem perdas (R $=$ G $=$ $0$), com sua impedância característica Z$_{0} = \sqrt{\dfrac{R + \jmath \omega L}{G + \jmath \omega C}}$ $=$ $\sqrt{\dfrac{L - \jmath \left(\frac{R}{\omega}\right)}{C - \jmath \left(\frac{G}{\omega}\right)}}$ $=$ $\sqrt{\dfrac{(LC + RG\omega^{-2}) + \jmath (LG - RC)\omega^{-1}}{C^{2} + \left(\frac{G}{\omega}\right)^{2}}}$ $=$ $\sqrt{\dfrac{L}{C}}$ $\Rightarrow$ Z$_{0}$ $=$ $\sqrt{\dfrac{5 \times 10^{-7}}{7 \times 10^{-11}}}$ $\Rightarrow$ Z$_{0}$ $=$ $\dfrac{100\sqrt{35}}{7} \approx 84,52$[\si{\ohm}]. Como não há perdas o fator de atenuação é nulo $(\alpha = 0)$ e o fator de fase é dado por $\beta$ $=$ $\omega\sqrt{LC}$, assim $\beta$ $=$ $2\pi\sqrt{5 \times 10^{-7} \times 7 \times 10^{-11}}f$ $=$ $2\pi\sqrt{35 \times 10^{-18}}f$ $\Rightarrow$ $\beta$ $=$ $\dfrac{2\pi\sqrt{35}}{10^{9}}f \approx 3,71f \times 10^{-8}$[\si{\radian/\meter}]
+
+Como Z$_{L}$ $=$ $\dfrac{V_{L}}{I_{L}}$ $=$ $\dfrac{V^{+} + V^{-}}{V^{+} - V^{-}}Z_{0}$ e $\Gamma$ $=$ $\dfrac{V^{-}}{V^{+}}$, temos Z$_{L}$ $=$ $\dfrac{1 + \Gamma}{1 - \Gamma}Z_{0}$, assim o coeficiente de reflexão de tensão é dado por $\Gamma$ $=$ $\dfrac{Z_{L} - Z_{0}}{Z_{L} + Z_{0}}$ $\Rightarrow$ $\Gamma$ $=$ $\dfrac{40 - \frac{100\sqrt{35}}{7}}{40 + \frac{100\sqrt{35}}{7}} \approx -0.35$. Agora podemos calcular o coeficiente de reflexão de tensão em qualquer ponto da linha de transmissão $\Gamma(z)$ $=$ $\dfrac{V^{-}e^{\gamma z}}{V^{+}e^{-\gamma z}}$ $=$ $\Gamma e^{2\gamma z}$, logo $\Gamma(z)$ $=$ $\Gamma e^{2z(\alpha + \jmath \beta)}$. Para $\alpha$ $=$ $0$, $\beta$ $=$ $3,71f \times 10^{-8}$[\si{\radian/\meter}] e z $=$ $-40$\si{\meter} temos $\Gamma(z = -40)$ $=$ $-0.35 e^{-\jmath 2,97f \times 10^{-6}}$. A corrente de entrada na linha é dado por I$_{in}(z = 0)$ $=$ $\dfrac{V^{+}}{Z_{0}}\dfrac{(1 - \Gamma_{s})}{e^{\jmath \beta z}}$, como V$_{s}$ $=$ $V^{+} + V^{-}$ $=$ $V^{+}(1 + \Gamma_{s})$, logo V$^{+}$ $=$ $\dfrac{V_{s}}{1 + \Gamma_{s}}$, assim I$_{in}$ $=$ $\dfrac{V_{s}}{Z_{0}}\left[\dfrac{1 - \Gamma_{s}}{1 + \Gamma_{s}}\right]$ $=$ $\dfrac{100}{\frac{100\sqrt{35}}{7}}$$\left[\dfrac{1 + 0.35 e^{-\jmath 2,97f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$ $\approx$ $1,18\left[\dfrac{1 + 0.35 e^{-\jmath 2,97f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$[\si{\ampere}]. A corrente na carga é dado por I$_{L}$ $=$ $\dfrac{V_{s}}{Z_{0}}e^{-\jmath\beta z}\left[\dfrac{1 - \Gamma}{1 + \Gamma_{s}}\right]$, com z $=$ $40$\si{\meter}, temos I$_{L}$ $=$ $\dfrac{100}{\frac{135\sqrt{35}}{7}}$ $\left[\dfrac{e^{-\jmath 1,48f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$ $\approx$ $\left(\dfrac{1,6e^{-\jmath 1,48f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right)$[\si{\ampere}].
+%
+\begin{figure}[!htb]
+\centering
+\subfigure[Corrente de Entrada]{
+  \includegraphics[scale=.5]{figures/plot_current_in.eps}
+  \label{fig:Iin}
+}
+\subfigure[Corrente sobre a Carga]{%
+  \includegraphics[scale=.5]{figures/plot_current_load.eps}
+  \label{fig:Il}
+}
+\caption{Gráficos da amplitude e fase das Correntes na entrada e sobre carga}
+\label{fig:IQ1}
+\end{figure}
+
+
+\end{enumerate}
+% LocalWords:  Smith pt max LT LC LG RC
