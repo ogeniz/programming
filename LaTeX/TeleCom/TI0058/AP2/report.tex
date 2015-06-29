@@ -33,15 +33,13 @@ Comprovar usando a carta de Smith.
 \newpage
 
 \begin{center}\fbox{\LARGE Respostas}\end{center}
-
-
-\vspace*{1.5cm}
-
+%\vspace*{1.5cm}
 \begin{enumerate}[1.]
 % Resposta 1a. Questão
 \item A linha de transmissão, no problema, é sem perdas (R $=$ G $=$ $0$), com sua impedância característica Z$_{0} = \sqrt{\dfrac{R + \jmath \omega L}{G + \jmath \omega C}}$ $=$ $\sqrt{\dfrac{L - \jmath \left(\frac{R}{\omega}\right)}{C - \jmath \left(\frac{G}{\omega}\right)}}$ $=$ $\sqrt{\dfrac{(LC + RG\omega^{-2}) + \jmath (LG - RC)\omega^{-1}}{C^{2} + \left(\frac{G}{\omega}\right)^{2}}}$ $=$ $\sqrt{\dfrac{L}{C}}$ $\Rightarrow$ Z$_{0}$ $=$ $\sqrt{\dfrac{5 \times 10^{-7}}{7 \times 10^{-11}}}$ $\Rightarrow$ Z$_{0}$ $=$ $\dfrac{100\sqrt{35}}{7} \approx 84,52$[\si{\ohm}]. Como não há perdas o fator de atenuação é nulo $(\alpha = 0)$ e o fator de fase é dado por $\beta$ $=$ $\omega\sqrt{LC}$, assim $\beta$ $=$ $2\pi\sqrt{5 \times 10^{-7} \times 7 \times 10^{-11}}f$ $=$ $2\pi\sqrt{35 \times 10^{-18}}f$ $\Rightarrow$ $\beta$ $=$ $\dfrac{2\pi\sqrt{35}}{10^{9}}f \approx 3,71f \times 10^{-8}$[\si{\radian/\meter}]
 
 Como Z$_{L}$ $=$ $\dfrac{V_{L}}{I_{L}}$ $=$ $\dfrac{V^{+} + V^{-}}{V^{+} - V^{-}}Z_{0}$ e $\Gamma$ $=$ $\dfrac{V^{-}}{V^{+}}$, temos Z$_{L}$ $=$ $\dfrac{1 + \Gamma}{1 - \Gamma}Z_{0}$, assim o coeficiente de reflexão de tensão é dado por $\Gamma$ $=$ $\dfrac{Z_{L} - Z_{0}}{Z_{L} + Z_{0}}$ $\Rightarrow$ $\Gamma$ $=$ $\dfrac{40 - \frac{100\sqrt{35}}{7}}{40 + \frac{100\sqrt{35}}{7}} \approx -0.35$. Agora podemos calcular o coeficiente de reflexão de tensão em qualquer ponto da linha de transmissão $\Gamma(z)$ $=$ $\dfrac{V^{-}e^{\gamma z}}{V^{+}e^{-\gamma z}}$ $=$ $\Gamma e^{2\gamma z}$, logo $\Gamma(z)$ $=$ $\Gamma e^{2z(\alpha + \jmath \beta)}$. Para $\alpha$ $=$ $0$, $\beta$ $=$ $3,71f \times 10^{-8}$[\si{\radian/\meter}] e z $=$ $-40$\si{\meter} temos $\Gamma(z = -40)$ $=$ $-0.35 e^{-\jmath 2,97f \times 10^{-6}}$. A corrente de entrada na linha é dado por I$_{in}(z = 0)$ $=$ $\dfrac{V^{+}}{Z_{0}}\dfrac{(1 - \Gamma_{s})}{e^{\jmath \beta z}}$, como V$_{s}$ $=$ $V^{+} + V^{-}$ $=$ $V^{+}(1 + \Gamma_{s})$, logo V$^{+}$ $=$ $\dfrac{V_{s}}{1 + \Gamma_{s}}$, assim I$_{in}$ $=$ $\dfrac{V_{s}}{Z_{0}}\left[\dfrac{1 - \Gamma_{s}}{1 + \Gamma_{s}}\right]$ $=$ $\dfrac{100}{\frac{100\sqrt{35}}{7}}$$\left[\dfrac{1 + 0.35 e^{-\jmath 2,97f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$ $\approx$ $1,18\left[\dfrac{1 + 0.35 e^{-\jmath 2,97f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$[\si{\ampere}]. A corrente na carga é dado por I$_{L}$ $=$ $\dfrac{V_{s}}{Z_{0}}e^{-\jmath\beta z}\left[\dfrac{1 - \Gamma}{1 + \Gamma_{s}}\right]$, com z $=$ $40$\si{\meter}, temos I$_{L}$ $=$ $\dfrac{100}{\frac{135\sqrt{35}}{7}}$ $\left[\dfrac{e^{-\jmath 1,48f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right]$ $\approx$ $\left(\dfrac{1,6e^{-\jmath 1,48f \times 10^{-6}}}{1 - 0.35 e^{-\jmath 2,97f \times 10^{-6}}}\right)$[\si{\ampere}].
+
 %
 \begin{figure}[!htb]
 \centering
@@ -56,12 +54,51 @@ Como Z$_{L}$ $=$ $\dfrac{V_{L}}{I_{L}}$ $=$ $\dfrac{V^{+} + V^{-}}{V^{+} - V^{-}
 \caption{Gráficos da amplitude e fase das Correntes na entrada e sobre carga}
 \label{fig:IQ1}
 \end{figure}
-
+%
+\newpage
+%
 % resposta da 2a. Questão
 \item Normalizando a impedância da carga, em relação a impedância característica da linha de transmissão, temos Z$_{Ln}$ $=$ $\dfrac{Z_{L}}{Z_{0}}$ $=$ $\dfrac{80 + \jmath 100}{50}$ $\Rightarrow$ Z$_{Ln}$ $=$ $1.6 + \jmath 2$. Sobre carta de Smith desenha-se uma reta que passa sobre o ponto $(1.6,2)$ até a circunferência que mede o ângulo do coeficiente de reflexão, no caso $\theta \approx 35$\si{\degree}. Medindo o raio da carta, r$_{c} \approx 5,3$\si{\centi\meter}. A distância do ponto ao centro, $d \approx 8,4$\si{\centi\meter}. A razão $\dfrac{d}{r_{c}}$ nos dá o módulo de $\Gamma$, logo $|\Gamma|$ $=$ $\dfrac{5,3}{8,4}$ $\approx$ $0,63$. Assim o coeficiente de reflexão é dado por $\Gamma = 0,63\phase{35^{\circ}}$. Utilizando a escala {\bf SWR} e dado o $|\Gamma|$ $=$ $0,63$, temos o TOE $\approx$ $4,5$
 
 Para a admitância estende-se a reta de Z$_{Ln}$ para completar o diâmetro da circunferência. Marcando um ponto com a mesma distância de Z$_{Ln}$ ao centro sendo no sentido contrário, temos o ponto Y$_{Ln} = 0,24 - \jmath 0,3$. Assim Y$_{L}$ $=$ $\dfrac{Z_{0}}{Y_{Ln}}$ $=$ $\dfrac{50}{0,24 - \jmath 0,3}$ $\Rightarrow$ Y$_{L}$ $\approx$ $81,3 + \jmath 101.62$ $=$ $130.1\phase{51,34^{\circ}}$[\si{\siemens}].
 
-A impedância da carga a $0.15\lambda$ é encontrada acompanhando a marcação da circunferência que mostra os fatores do comprimento de onda na direção da carga, ao encontrar o valor desenha-se um segmento de reta até o centro da carta. Com um compasso, centrado na carta e de raio Z$_{Ln}$, faz-se um arco até encontrar o segmento de reta. Esse ponto é a impedância desejada. No caso Z$_{in}$ $\approx$ $0,6 - \jmath 1,2$ $\Rightarrow$ Z$_{in}$ $=$ $1.34\phase{-63,46^\circ}$[\si{\ohm}]
+A impedância da carga a $0.15\lambda$ é encontrada girando a carta de Smith no sentido do gerador. Uma volta completa representa $0.5\lambda$, como queremos calcular a impedância a $0.15\lambda$ da carga temos $(0,5 - d)\lambda = 0,15\lambda$ $\Rightarrow$ d $=$ $0,35\lambda$. É traçado um segmento de reta da origem a marcação de $0,35\lambda$ e com o compasso faz-se um arco, seguindo a circunferência a qual o ponto $(1.6,2)$ pertence. O ponto aonde o compasso coincide com o segmento de reta é a impedância desejada. No caso Z$_{in} \approx 0,58 - \jmath 1,19$ $\Rightarrow$ Z$_{in} = 1,32\phase{-64,01^\circ}$[\si{\ohm}]
+
+O cálculo do 1\textordmasculine pico de tensão, para uma linha de comprimento $0,35\lambda$, temos que a distância em relação a carga é dada por d$_{V_{M}}$ $=$ $(0,25 - 0,2) \cdot 0,35\lambda$ $\Rightarrow$ d$_{V_{M}}$ $=$ $0,0175\lambda$. O 1\textordmasculine vale é dado por d$_{V_{m}} = (d_{V_{M}} + 0,25 \cdot 0,35)\lambda$ $\Rightarrow$ d$_{V_{m}}$ $=$ $0,105\lambda$
+
+A impedância de entrada, para a linha de $0,35\lambda$ de comprimento, é dado pelo giro de $0,15\lambda$ na direção da carga seja $0,45\lambda$ ou $0,05\lambda$ na direção do gerador. No caso Z$_{in} \approx 0,25 - \jmath 0,3$ $\Rightarrow$ Z$_{in} = 0,39\phase{50,19^\circ}$[\si{\ohm}].
+
+% resposta da 4a. Questão
+\item[4.] Para que ocorra um casamento perfeito de impedâncias se, e somente se, $Z_{L} = Z_{0}$ isto implica que $\Gamma = 0$.
+
+No caso de adicionar um capacitor em série com $Z_{L} = 80 + \jmath 100$[\si{\ohm}] e $Z_{0} = 50$[\si{\ohm}], temos a seguinte relação $Z_{0} = Z^{'}_{L} = Z_{L} + Z_{C}$, como $Z_{C} = -\dfrac{\jmath}{Z_{0} \omega C}$, temos:
+%
+\begin{eqnarray*}
+1 + \jmath 0 & = & 1.6 + \jmath (2 - \dfrac{1}{Z_{0} \omega C}) \\
+\jmath (2 - \dfrac{1}{Z_{0} \omega C}) & = & 0 \\
+C & = & \dfrac{1}{200\pi \times 1,8 \times 10^{9}} \\
+C & = & 0,8841 \si{\pico}[\si{\farad}]
+\end{eqnarray*}
+%
+Assim temos que adicionar a carga normalizada, $Z_{L} = 1.6 + \jmath 2$ a impedância capacitiva $X_{C} = -\jmath 2$ em série para obter o menor $\Gamma$ possível. Como $\mathfrak{R}_{e}[Z_{0}] \neq \mathfrak{R}_{e}[Z^{'}_{L}]$ o casamento não é perfeito. O comprimento d é dado em função do comprimento de onda $\lambda$, observando os valores dos respectivos comprimentos de onda de $Z_{L}$ e $Z_{c}$. Assim d $=$ $(0,193 + 0,25 - 0,3)\lambda$ $\Rightarrow$ d $=$ $0,143\lambda$.
+
+Para o caso de um indutor em série, análogo ao caso do capacitor temos $1 + \jmath 0 = 1.6 + \jmath (2 + X_{L})$. Neste caso encontramos $X_{L} < 0$, assim como não é possível ter um indutor de impedância negativa, um indutor em série com a carga $Z_{L}$ não providencia nenhuma atenuação à reflexão de tensão na carga.
+% %
+% \newpage
+% %
+% \begin{figure}[!htb]
+% \centering
+% \subfigure[Corrente de Entrada]{
+%   \includegraphics[scale=.35]{figures/plot_current_in.eps}
+%   \label{fig:Iin}
+% }
+% \subfigure[Corrente sobre a Carga]{%
+%   \includegraphics[scale=.35]{figures/plot_current_load.eps}
+%   \label{fig:Il}
+% }
+% \caption{Gráficos da amplitude e fase das Correntes na entrada e sobre carga na 1a. Questão}
+% \label{fig:IQ1}
+% \end{figure}
+
 \end{enumerate}
 % LocalWords:  Smith pt max LT LC LG RC Ln SWR
