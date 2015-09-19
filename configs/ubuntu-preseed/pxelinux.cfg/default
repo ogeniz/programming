@@ -1,0 +1,7 @@
+default install
+label install
+	menu label ^Install
+	menu default
+	kernel ubuntu-installer/amd64/linux
+	append DEBCONF_DEBUG=5 vga=792 auto=true language=pt_BR country=BR locale=pt_BR.UTF-8 keymap=br-abnt2 interface=eth0 hostname=unassigned-hostname domain=unassigned-domain initrd=ubuntu-installer/amd64/initrd.gz url=http://192.168.200.4/utopic-amd64/preseed_amd64 --verbose
+    # ks=http://192.168.200.4/utopic-amd64/ks_amd64.cfg --verbose
