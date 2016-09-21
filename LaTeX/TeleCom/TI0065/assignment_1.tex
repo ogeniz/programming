@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+
+%\usepackage{sbc-template}
+\usepackage{graphicx}
+\usepackage{graphicx,url}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc} 
+
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{epstopdf}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Universidade Federal do Ceará \\ Departamento de Engenharia de Teleinformática \\ Engenharia de Telecomunicações \\ Disciplina: Antenas} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Relatório 1 - Capítulo 2 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Ogeniz Façanha Costa - 371987} % Your name
+
+\date{\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Questão 2.4}
+
+Determine a largura de feixe de meia potência (LFMP) e a largura de feixe entre nulos (LFEN), em radianos e em graus, para a seguinte intensidade de radiação normalizada: $U(\theta) = \cos^{2}{\theta}$, para
+
+$
+\left\{\begin{array}{l}
+0 \leq \theta \leq 90\degree \\
+0 \leq \phi \leq 360\degree
+\end{array}\right.
+$ 
+
+
+
+\section{Questão 2.5}
+
+Determine a largura de feixe de meia potência (LFMP) e a largura de feixe entre nulos (LFEN), em radianos e em graus, para a seguinte intensidade de radiação normalizada: $U(\theta) = \cos{2\theta}\cos{3\theta}$, para
+
+$
+\left\{\begin{array}{l}
+0 \leq \theta \leq 90\degree \\
+0 \leq \phi \leq 360\degree
+\end{array}\right.
+$ 
+
+
+\section{Questão 2.7}
+A potência radiada por uma antena sem perda é $14\si{\watt}$. As características direcionais da antena são representadas pelas seguintes intensidades de radiação:
+
+$
+\left\{\begin{array}{l|l}
+U(\theta)= B_0\cos^2\theta & \text{(watts/unidades de ângulo sólido)} \\
+U(\theta)= B_0\cos^3\theta & (0 \leq \theta \leq \frac{\pi}{2} , 0 \leq \phi \leq 2\pi) \\
+\end{array}\right.
+$ 
+
+Para cada uma, determine:\\
+\textbf{(a)} A máxima densidade de potência (em watts/metro quadrado) a uma distância de 1.000 metros (admita que estaé uma distância de campo distante). Especifique o ângulo em que isso ocorre.
+
+\textbf{(b)} Valores exato e aproximado para o ângulo sólido de feixe $\Omega_A$
+
+\textbf{(c)} Diretividade, exata e aproximada, da antena (adimensional e em dB).
+
+\textbf{(d)} Ganho, exato e aproximado, da antena (adimensional e em dB)
+
+
+\textbf{Resposta:}
+
+
+\section{Questão 2.8}
+Você é um engenheiro de antenas e deve projetar uma antena de alta diretividade/ganho para um sistema de comunicação espacial operando em $\mathbf{14\si{\giga\hertz}}$. As especificações da antena são tais que seu diagrama consiste basicamente em um lóbulo principal e, para simplificar, nenhum lóbulo secundário (caso exista algum lóbulo secundário, sua intensidade será muito pequena e você pode admitir que é desprezível ou nula). Pede-se ainda que o diagrama seja simétrico no plano azimutal. Para atender aos objetivos do projeto o lóbulo principal do diagrama deve ter uma largura de feixe de meia potência de 10 graus. Para facilitar, suponha que o lóbulo principal da intensidade de radiação normalizada da antena é aproximada por
+
+\begin{align}
+U(\theta,\phi) = cos^n(\theta) 
+\end{align} 
+
+e existe somente no hemisfério superio ($0 \leq \theta \leq \frac{\pi}{2}, 0 \leq \phi \leq 2\pi$). Determine:
+
+\textbf{(a)} O valor de n (não necessariamente um inteiro) que atende as especificações do lóbulo principal. Mantenha cinco algarismos significativos em seus cálculos.
+
+\textbf{(b)} O valor exato da máxima diretividade da antena (adimensional e em dB).
+
+\textbf{(c)} O valor aproximado para a máxima diretividade da antena segundo fórmula de Kraus (adimensional e em dB).
+
+\textbf{(d)} O valor aproximado para a máxima diretividade da antena segundo fórmula de Tai \& Pereira (adimensional e em dB).
+\\
+\textbf{Resposta:}
+
+
+\section{Questão 2.11}
+A intensidade de radiação normalizada de uma certa antena é dada por:
+
+\begin{align}
+U = \sin\theta \sin^3(\phi) 
+\end{align}
+
+A intensidade de radiação existe somente na região $0 \leq \theta \leq \pi, 0 \leq \phi \leq \pi$, sendo nula no restante do espaço. Determine:
+
+\textbf{(a)} O valor exato da diretividade  (adimensional e em dB).
+
+\textbf{(b)} larguras de feixe de meia potência nos planos azimutal e de elevação (em graus).
+\\
+
+\textbf{Resposta:}
+
+
+\section{Questão 2.12}
+
+Determine a diretividade (adimensional e em dB) para a antena do Exercício 2.11, usando:
+ 
+\textbf{(a)} A fórmula aproximada de Kraus.
+
+\textbf{(b)} A fórmula aproximada de Tai \& Pereira.\\
+\begin{align}
+U = \sin\theta \sin^3(\phi) 
+\end{align}
+
+\textbf{Resposta:}
+
+
+\section{Questão 2.13}
+
+Para o Exercício 2.5, determine o valor aproximado da diretividade (em dB) usando 
+
+\textbf{(a)} A fórmula aproximada de Kraus.
+
+\textbf{(b)} A fórmula aproximada de Tai \& Pereira.\\
+
+$\mathbf{ U(\theta) = cos(\theta)cos(2\theta)}$, para \\
+$
+\left\{\begin{array}{l}
+0 \leq \theta \leq 90\degree \\
+0 \leq \phi \leq 360\degree
+\end{array}\right.
+$ 
+
+
+\textbf{Resposta:}\\
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
