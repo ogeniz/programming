@@ -1,47 +1,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Short Sectioned Assignment
-% LaTeX Template
-% Version 1.0 (5/5/12)
+% Short Sectioned Assignment LaTeX Template Version 1.0 (5/5/12)
 %
 % This template has been downloaded from:
 % http://www.LaTeXTemplates.com
 %
-% Original author:
-% Frits Wenneker (http://www.howtotex.com)
+% Original author: Frits Wenneker (http://www.howtotex.com)
 %
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% License: CC BY-NC-SA 3.0
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+% ----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[paper=a4,
+fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
 
-%\usepackage{sbc-template}
-\usepackage{graphicx}
-\usepackage{graphicx,url}
-\usepackage{amsmath}
-\usepackage{gensymb}
-\usepackage{siunitx}
-\usepackage[brazil]{babel}   
-\usepackage[latin1]{inputenc} 
-
+% \usepackage{sbc-template}
+\usepackage{graphicx} \usepackage{graphicx,url} \usepackage{amsmath}
+\usepackage{gensymb} \usepackage{enumerate} \usepackage{siunitx}
+\usepackage[brazil]{babel} \usepackage[latin1]{inputenc}
+\usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsmath}
+\usepackage{amsxtra} \usepackage{esint}
+% \usepackage[integrals]{wasysym}
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\allsectionsfont{\centering
+  \normalfont\scshape} % Make all sections centered, the default font and small caps
 \usepackage{epstopdf}
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
 \fancyhead{} % No page header - if you want one, create it in the same way as the footers below
 \fancyfoot[L]{} % Empty left footer
 \fancyfoot[C]{} % Empty center footer
-\fancyfoot[R]{\thepage} % Page numbering for right footer
+\fancyfoot[R]{} % \thepage Page numbering for right footer
 \renewcommand{\headrulewidth}{0pt} % Remove header underlines
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
@@ -52,18 +49,19 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------
+% TITLE SECTION
+% ----------------------------------------------------------------------------------------
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{	
-\normalfont \normalsize 
-\textsc{Universidade Federal do Ceará \\ Departamento de Engenharia de Teleinformática \\ Engenharia de Telecomunicações \\ Disciplina: Antenas} \\ [25pt] % Your university, school and/or department name(s)
-\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Relatório 1 - Capítulo 2 \\ % The assignment title
-\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+\title{ \normalfont \normalsize \textsc{Universidade Federal do Ceará
+    \\ Departamento de Engenharia de Teleinformática \\ Engenharia de
+    Telecomunicações \\ Disciplina: Antenas} \\
+  [25pt] % Your university, school and/or department name(s)
+  \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+  \huge Relatório 1 - Capítulo 2 \\ % The assignment title
+  \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Ogeniz Façanha Costa - 371987} % Your name
@@ -77,74 +75,251 @@
 \newpage
 
 
-%----------------------------------------------------------------------------------------
-%	PROBLEM 1
-%----------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------
+% PROBLEM 1
+% ----------------------------------------------------------------------------------------
 
 \section{Questão 2.4}
 
-Determine a largura de feixe de meia potência (LFMP) e a largura de feixe entre nulos (LFEN), em radianos e em graus, para a seguinte intensidade de radiação normalizada: $U(\theta) = \cos^{2}{\theta}$, para
+Determine a largura de feixe de meia potência (LFMP) e a largura de
+feixe entre nulos (LFEN), em radianos e em graus, para a seguinte
+intensidade de radiação normalizada: $U(\theta) = \cos^{2}{\theta}$,
+para
 
-$
-\left\{\begin{array}{l}
-0 \leq \theta \leq 90\degree \\
-0 \leq \phi \leq 360\degree
-\end{array}\right.
-$ 
-
-
-
-\section{Questão 2.5}
-
-Determine a largura de feixe de meia potência (LFMP) e a largura de feixe entre nulos (LFEN), em radianos e em graus, para a seguinte intensidade de radiação normalizada: $U(\theta) = \cos{2\theta}\cos{3\theta}$, para
-
-$
-\left\{\begin{array}{l}
-0 \leq \theta \leq 90\degree \\
-0 \leq \phi \leq 360\degree
-\end{array}\right.
-$ 
+$ \left\{\begin{array}{l}
+           0 \leq \theta \leq 90\degree \\
+           0 \leq \phi \leq 360\degree
+         \end{array}\right.
+       $
 
 
+       \begin{enumerate}[i]
+       \item LFMP. Seja $U(\theta_{h}) = \dfrac{1}{2}$ $\Rightarrow$
+         $\cos^{2}{\theta_{h}} = \dfrac{1}{2}$ $\Rightarrow$
+         $\theta_h = \cos^{-1}\left(\sqrt{\dfrac{1}{2}}\right)$
+         $\Rightarrow$ $\theta_{h} = \dfrac{\pi}{4}$. A função
+         $U(\theta)$ é simétrica em relação ao máximo em $\theta = 0$,
+         assim LFMP $=$
+         $2\theta_{h} = \dfrac{\pi}{2} \, \mathrm{ou} \,
+         90\si{\degree}$
+       \item LFEN. Seja $U(\theta_{n}) = 0$ $\Rightarrow$ $\theta_{n}$
+         $=$ $\cos^{-1}\left(0\right)$ $\Rightarrow$ $\theta_{n}$ $=$
+         $\dfrac{\pi}{2}$. Pela mesma razão do item anterior LFEN $=$
+         $2\theta_{n}$ $=$ $\pi \, \mathrm{ou} \, 180\si{\degree}$
+       \end{enumerate}
+
+
+       \section{Questão 2.5}
+
+       Determine a largura de feixe de meia potência (LFMP) e a
+       largura de feixe entre nulos (LFEN), em radianos e em graus,
+       para a seguinte intensidade de radiação normalizada:
+       $U(\theta) = \cos{2\theta}\cos{3\theta}$, para
+
+       $ \left\{\begin{array}{l}
+                  0 \leq \theta \leq 90\degree \\
+                  0 \leq \phi \leq 360\degree
+                \end{array}\right.
+              $
+
+
+              \begin{enumerate}[i]
+              \item LFMP. Seja $U(\theta_{h}) = \dfrac{1}{2}$
+                $\Rightarrow$
+                \fbox{$\cos{2\theta_{h}}\cos{3\theta_{h}} -
+                  \dfrac{1}{2} = 0$}. A equação, em destaque, é
+                transcendental. Sendo necessário o uso de técnicas
+                numéricas para encontrar suas raízes. Usando a função
+                solve de um {\bfseries{CAS}}(\emph{Computer Algebra
+                  System}), $\theta_{h} \approx 0.3049\si{\radian}$ ou
+                $\approx$ $17.4711\si{\degree}$. A função $U(\theta)$
+                é simétrica em relação ao máximo em $\theta = 0$,
+                assim
+                $ \mathrm{LFMP} \, = 2\theta_{h} \approx
+                0.6098\si{\radian} \Rightarrow \theta_{n} \approx
+                34.94\si{\degree}$.
+    
+              \item LFEN. Seja $U(\theta_{n}) = 0$ $\Rightarrow$
+                \fbox{$\cos{2\theta_{n}}\cos{3\theta_{n}} = 0$}. Isto
+                nos leva a
+                duas soluções para $\theta_{n}$.\\
+                $ \left\{\begin{array}{l} \cos{2\theta_{n}} = 0
+                    \Rightarrow \theta_{n} =
+                           \dfrac{1}{2}\cos^{-1}\left(0\right) = \dfrac{\pi}{4}\\
+                           \\ \cos{3\theta_{n}} = 0 \Rightarrow
+                           \theta_{n} =
+                           \dfrac{1}{3}\cos^{-1}\left(0\right) =
+                           \dfrac{\pi}{6}
+                         \end{array}\right.
+                       $
+
+
+                       O menor valor de $\theta_{n}$ é o LFEN, assim,
+                       seguindo a o mesmo motivo do item anterior LFEN
+                       $=$ $2\theta_{n}$ $=$ $\dfrac{\pi}{6}$
+                       $\Rightarrow$ $\theta_{n}$ $=$ $\dfrac{\pi}{3}$
+                       ou $60\si{\degree}$
+                     \end{enumerate}
+
+
+\newpage
+                     
 \section{Questão 2.7}
-A potência radiada por uma antena sem perda é $14\si{\watt}$. As características direcionais da antena são representadas pelas seguintes intensidades de radiação:
+A potência radiada por uma antena sem perda é $14\si{\watt}$. As
+características direcionais da antena são representadas pelas
+seguintes intensidades de radiação:
 
-$
-\left\{\begin{array}{l|l}
-U(\theta)= B_0\cos^2\theta & \text{(watts/unidades de ângulo sólido)} \\
-U(\theta)= B_0\cos^3\theta & (0 \leq \theta \leq \frac{\pi}{2} , 0 \leq \phi \leq 2\pi) \\
-\end{array}\right.
-$ 
+$ \left\{\begin{array}{l|l}
+           U(\theta)= B_0\cos^2\theta & \text{(watts/unidades de ângulo sólido)} \\
+           U(\theta)= B_0\cos^3\theta & (0 \leq \theta \leq \frac{\pi}{2} , 0 \leq \phi \leq 2\pi) \\
+         \end{array}\right.
+       $
 
-Para cada uma, determine:\\
-\textbf{(a)} A máxima densidade de potência (em watts/metro quadrado) a uma distância de 1.000 metros (admita que estaé uma distância de campo distante). Especifique o ângulo em que isso ocorre.
+       \vspace*{0.5cm}Para cada uma, determine:
 
-\textbf{(b)} Valores exato e aproximado para o ângulo sólido de feixe $\Omega_A$
+       \begin{enumerate}[(a)]
 
-\textbf{(c)} Diretividade, exata e aproximada, da antena (adimensional e em dB).
+       \item A máxima densidade de potência (em
+         $\si{\watt/\meter^{2}}$) a uma distância de
+         1.000$\si{\meter}$ (admita que esta é uma distância de campo
+         distante). Especifique o ângulo em que isso ocorre.
+       \item Valores exato e aproximado para o ângulo sólido de feixe
+         $\Omega_A$.
+       \item Diretividade, exata e aproximada, da antena (adimensional
+         e em dB).
+       \item Ganho, exato e aproximado, da antena (adimensional e em
+         dB)
+       \end{enumerate}
 
-\textbf{(d)} Ganho, exato e aproximado, da antena (adimensional e em dB)
 
+       \begin{enumerate}[a.]
+       \item Máxima densidade de potência $[\si{\watt/\meter^{2}}]$
+         \begin{enumerate}[i.]
+         \item $U(\theta)$ $=$ $B_{0}\cos^{2}{\theta}$. \\ A potência
+           radiada é dada por $P_{rad}$ $=$
+           $\displaystyle \oiint U d\Omega$, com
+           $P_{rad} = 14\si{\watt}$ e
+           $d\Omega = \sin{\theta} d\theta d\phi$. Assim, temos:
 
-\textbf{Resposta:}
+           \begin{eqnarray*}
+             14 & = &\int^{2\pi}_{0}\int^{\frac{\pi}{2}}_{0}
+                      B_{0}\cos^{2}{\theta}\sin{\theta} d\theta d\phi \\
+             14 & = & 2B_{0}\pi \int^{\frac{\pi}{2}}_{0} \cos^{2}{\theta}\sin{\theta} d\theta
+           \end{eqnarray*}
 
+           
+           Fazendo a seguinte substituição de variável
 
+           $ \left\{\begin{array}{l}
+                      u = \cos{\theta} \\
+                      -du = \sin{\theta} d\theta
+                    \end{array}\right.
+                  $
+
+                  e dos limites, temos
+
+                \begin{eqnarray*}
+                  14 & = & (-1)2B_{0}\pi \int^{0}_{1}u^{2} du \\
+                     & = & 2B_{0}\pi \int^{1}_{0}u^{2} du \\                  
+                     & = & 2B_{0}\pi \left(\dfrac{u^{3}}{3}\right)^{1}_{0} \\
+                  14 & = & \dfrac{2B_{0}\pi}{3} \\
+                  B_{0} & = & \dfrac{21}{\pi}
+                \end{eqnarray*}
+
+                A densidade de potência é dado por
+                $W_{rad} = \dfrac{U(\theta,\phi)}{r^{2}}$, com
+                $U(\theta,\phi) = \dfrac{21}{\pi}\cos^{2}{\theta}$,
+                para seu valor máximo temos $\theta = k\pi$, com
+                $k = 2n$ e $n \in \mathbb{Z}$, assim
+                $\cos^{2}{\theta}$ $=$ $1$.
+
+                \begin{eqnarray*}
+                  W_{M} & = & \dfrac{21}{\pi}\left(
+                              \dfrac{1}{10^{3}}\right)^{2} \\
+                  W_{M} & = & \dfrac{21}{\pi}\mu [\si{\watt/\meter^{2}}]
+                \end{eqnarray*}
+
+              \item $U(\theta)$ $=$ $B_{0}\cos^{3}{\theta}$. O cálculo
+                é análogo ao item anterior.
+
+                \begin{eqnarray*}
+                  14 & = &\int^{2\pi}_{0}\int^{\frac{\pi}{2}}_{0}
+                           B_{0}\cos^{3}{\theta}\sin{\theta} d\theta d\phi \\
+                  14 & = & 2B_{0}\pi \int^{\frac{\pi}{2}}_{0} \cos^{3}{\theta}\sin{\theta} d\theta
+                \end{eqnarray*}
+                
+                Fazendo a seguinte substituição de variável
+
+                $ \left\{\begin{array}{l}
+                           u = \cos{\theta} \\
+                           -du = \sin{\theta} d\theta
+                         \end{array}\right.
+                       $
+
+                       e dos limites, temos
+
+                       \begin{eqnarray*}
+                         14 & = & (-1)2B_{0}\pi \int^{0}_{1}u^{3} du \\
+                            & = & 2B_{0}\pi \int^{1}_{0}u^{3} du \\                  
+                            & = & 2B_{0}\pi \left(\dfrac{u^{4}}{4}\right)^{1}_{0} \\
+                         14 & = & \dfrac{B_{0}\pi}{2} \\
+                         B_{0} & = & \dfrac{28}{\pi}
+                       \end{eqnarray*}
+
+                       A densidade de potência é dado por
+                       $W_{rad} = \dfrac{U(\theta,\phi)}{r^{2}}$, com
+                       $U(\theta,\phi) =
+                       \dfrac{28}{\pi}\cos^{3}{\theta}$, para seu
+                       valor máximo temos $\theta = k\pi$, com
+                       $k = 2n$ e $n \in \mathbb{Z}$, assim
+                       $\cos^{3}{\theta}$ $=$ $1$.
+
+                       \begin{eqnarray*}
+                         W_{M} & = & \dfrac{28}{\pi}\left(
+                                     \dfrac{1}{10^{3}}\right)^{2} \\
+                         W_{M} & = & \dfrac{28}{\pi}\mu [\si{\watt/\meter^{2}}]
+                       \end{eqnarray*}
+
+                     \end{enumerate}
+
+                   \item 
+                     
+                   \end{enumerate}
+       
+       
 \section{Questão 2.8}
-Você é um engenheiro de antenas e deve projetar uma antena de alta diretividade/ganho para um sistema de comunicação espacial operando em $\mathbf{14\si{\giga\hertz}}$. As especificações da antena são tais que seu diagrama consiste basicamente em um lóbulo principal e, para simplificar, nenhum lóbulo secundário (caso exista algum lóbulo secundário, sua intensidade será muito pequena e você pode admitir que é desprezível ou nula). Pede-se ainda que o diagrama seja simétrico no plano azimutal. Para atender aos objetivos do projeto o lóbulo principal do diagrama deve ter uma largura de feixe de meia potência de 10 graus. Para facilitar, suponha que o lóbulo principal da intensidade de radiação normalizada da antena é aproximada por
+Você é um engenheiro de antenas e deve projetar uma antena de alta
+diretividade/ganho para um sistema de comunicação espacial operando em
+$\mathbf{14\si{\giga\hertz}}$. As especificações da antena são tais
+que seu diagrama consiste basicamente em um lóbulo principal e, para
+simplificar, nenhum lóbulo secundário (caso exista algum lóbulo
+secundário, sua intensidade será muito pequena e você pode admitir que
+é desprezível ou nula). Pede-se ainda que o diagrama seja simétrico no
+plano azimutal. Para atender aos objetivos do projeto o lóbulo
+principal do diagrama deve ter uma largura de feixe de meia potência
+de 10 graus. Para facilitar, suponha que o lóbulo principal da
+intensidade de radiação normalizada da antena é aproximada por
 
 \begin{align}
-U(\theta,\phi) = cos^n(\theta) 
+  U(\theta,\phi) = cos^n(\theta) 
 \end{align} 
 
-e existe somente no hemisfério superio ($0 \leq \theta \leq \frac{\pi}{2}, 0 \leq \phi \leq 2\pi$). Determine:
+e existe somente no hemisfério superior
+($0 \leq \theta \leq \frac{\pi}{2}, 0 \leq \phi \leq
+2\pi$). Determine:
 
-\textbf{(a)} O valor de n (não necessariamente um inteiro) que atende as especificações do lóbulo principal. Mantenha cinco algarismos significativos em seus cálculos.
+\textbf{(a)} O valor de n (não necessariamente um inteiro) que atende
+as especificações do lóbulo principal. Mantenha cinco algarismos
+significativos em seus cálculos.
 
-\textbf{(b)} O valor exato da máxima diretividade da antena (adimensional e em dB).
+\textbf{(b)} O valor exato da máxima diretividade da antena
+(adimensional e em dB).
 
-\textbf{(c)} O valor aproximado para a máxima diretividade da antena segundo fórmula de Kraus (adimensional e em dB).
+\textbf{(c)} O valor aproximado para a máxima diretividade da antena
+segundo fórmula de Kraus (adimensional e em dB).
 
-\textbf{(d)} O valor aproximado para a máxima diretividade da antena segundo fórmula de Tai \& Pereira (adimensional e em dB).
+\textbf{(d)} O valor aproximado para a máxima diretividade da antena
+segundo fórmula de Tai \& Pereira (adimensional e em dB).
 \\
 \textbf{Resposta:}
 
@@ -153,28 +328,34 @@ e existe somente no hemisfério superio ($0 \leq \theta \leq \frac{\pi}{2}, 0 \le
 A intensidade de radiação normalizada de uma certa antena é dada por:
 
 \begin{align}
-U = \sin\theta \sin^3(\phi) 
+  U = \sin\theta \sin^3(\phi) 
 \end{align}
 
-A intensidade de radiação existe somente na região $0 \leq \theta \leq \pi, 0 \leq \phi \leq \pi$, sendo nula no restante do espaço. Determine:
+A intensidade de radiação existe somente na região
+$0 \leq \theta \leq \pi, 0 \leq \phi \leq \pi$, sendo nula no restante
+do espaço. Determine:
 
-\textbf{(a)} O valor exato da diretividade  (adimensional e em dB).
+\textbf{(a)} O valor exato da diretividade (adimensional e em dB).
 
-\textbf{(b)} larguras de feixe de meia potência nos planos azimutal e de elevação (em graus).
-\\
+\textbf{(b)} larguras de feixe de meia potência nos planos azimutal e
+de elevação (em graus).
+
 
 \textbf{Resposta:}
 
 
 \section{Questão 2.12}
 
-Determine a diretividade (adimensional e em dB) para a antena do Exercício 2.11, usando:
+Determine a diretividade (adimensional e em dB) para a antena do
+Exercício 2.11, usando:
  
 \textbf{(a)} A fórmula aproximada de Kraus.
 
-\textbf{(b)} A fórmula aproximada de Tai \& Pereira.\\
+\textbf{(b)} A fórmula aproximada de Tai \& Pereira.
+
+
 \begin{align}
-U = \sin\theta \sin^3(\phi) 
+  U = \sin\theta \sin^3(\phi) 
 \end{align}
 
 \textbf{Resposta:}
@@ -182,23 +363,34 @@ U = \sin\theta \sin^3(\phi)
 
 \section{Questão 2.13}
 
-Para o Exercício 2.5, determine o valor aproximado da diretividade (em dB) usando 
+Para o Exercício 2.5, determine o valor aproximado da diretividade (em
+dB) usando
 
 \textbf{(a)} A fórmula aproximada de Kraus.
 
-\textbf{(b)} A fórmula aproximada de Tai \& Pereira.\\
+\textbf{(b)} A fórmula aproximada de Tai \& Pereira.
 
-$\mathbf{ U(\theta) = cos(\theta)cos(2\theta)}$, para \\
-$
-\left\{\begin{array}{l}
-0 \leq \theta \leq 90\degree \\
-0 \leq \phi \leq 360\degree
-\end{array}\right.
-$ 
+$\mathbf{ U(\theta) = cos(\theta)cos(2\theta)}$, para
 
 
-\textbf{Resposta:}\\
+$ \left\{\begin{array}{l}
+           0 \leq \theta \leq 90\degree \\
+           0 \leq \phi \leq 360\degree
+         \end{array}\right.
+       $
 
-%----------------------------------------------------------------------------------------
 
-\end{document}
+       \textbf{Resposta:}
+
+
+
+       % ----------------------------------------------------------------------------------------
+
+     \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+% LocalWords: CAS Computer Algebra System dB Kraus cos
