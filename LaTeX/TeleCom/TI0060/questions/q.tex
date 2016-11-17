@@ -1,3 +1,17 @@
+\section*{Questão 1}
+\label{q1}
+
+\begin{enumerate}[i.]
+   \item O  gráfico dos  níveis e  energia de cada  banda presente  em um
+átomo de um  sólido cristalino. As áreas hachuradas  mostram os níveis
+de energia permitidos, aonde os elétrons deveram preenche-los conforme
+seu níveis energéticos.
+   \item Mostra a  estrutura de bandas de um isolante.  Onde as bandas de
+valência e condução estão  totalmente preenchidas ou vazias. Impedindo
+a movimentação entre as bandas
+   \item 
+   \end{enumerate}
+   
 \section*{O que é uma Banda?}
 \label{q2}
 
@@ -86,23 +100,23 @@ assim $\tau \approx 2,51 \times 10^{-17} [\si{\second}]$
 
 \section*{Seja um fio de prata em $T = 300 \si{\kelvin}$, com $\tau = 3.8
   \times 10^{-14} \si{\second}$ e $N = 5,86 \times 10^{28} \si{\meter^{-3}}$. $R
-  = \sigma \dfrac{L}{A}$. $V_{deriva} = E \dfrac{e \tau}{m^{*}}$, sendo E o campo
+  = \sigma^{-1} \dfrac{L}{A}$. $V_{deriva} = E \dfrac{e \tau}{m^{*}}$, sendo E o campo
   elétrico. Calcule:}
 \label{q12}
 
 \begin{enumerate}[a)]
   \item R se $L = 100 \si{\meter}$ e $A = 10^{-7} \si{\meter^{2}}$.
     \begin{eqnarray*}
-      R & = & \sigma \dfrac{L}{A} \\ \nonumber
-        & = & 6,3 \times 10^{4} \dfrac{100}{10^{-7}} \\ \nonumber
-        & = & 6,3 \times 10^{13} \si{\ohm}\nonumber
+      R & = & \sigma^{-1} \dfrac{L}{A} \\ \nonumber
+        & = & \dfrac{100}{6,3 \times 10^{6} \times 10^{-7}} \\ \nonumber
+        & = & 158,73 \si{\ohm}\nonumber
     \end{eqnarray*}
   \item A corrente $I$ se a tensão aplicada nas extremidades do fio é
     de $1,6 \si{\volt}$.
     \begin{eqnarray*}
       I & = & \dfrac{V}{R} \\ \nonumber
-        & = & \dfrac{1,6}{6,3 \times 10^{13}} \\ \nonumber
-        & = & 25,3 \times 10^{-15} \si{\ampere}\nonumber
+        & = & \dfrac{1,6}{158,73} \\ \nonumber
+        & = & 10,08 \si{\milli\ampere}\nonumber
     \end{eqnarray*}
   \item A velocidade de deriva do elétron livre.
     \begin{eqnarray*}
@@ -164,9 +178,112 @@ desocupado, ou seja, surge um buraco na banda de valência.
     f(E_{f} + 0,2) & = & \dfrac{1}{1 + e^{\frac{0,2}
                          {1,38 \times 10^{-23} \times 290}}} \\
     \nonumber
-    f(E_{f} + 0,2) & = & \dfrac{1}{2} \nonumber
+    f(E_{f} + 0,2) & \approx & 0 \nonumber
   \end{eqnarray*}
 \end{enumerate}
 
-\section*{}
+\section*{Explique tudo o que você entende sobre semicondutor dopado com impurezas
+doadoras (o que acontece quimicamente, quem é o portador majoritário, como fica o
+nível de Fermi, etc...)}
 \label{q17}
+
+O semicondutor tem suas propriedades elétricas modificadas pela adição
+de impurezas,  processo de dopagem,  para se obter  uma característica
+desejada. Quimicamente  a impureza  adiciona elétrons,  excedentes, na
+banda de  valência do  semicondutor. Sendo estes  elétrons excedentes,
+provenientes da impureza, chamados de portador majoritário.
+
+\vspace*{0.5cm}
+
+\noindent Dado ao excesso de elétrons e falta de buracos o nível de \emph{Fermi}
+está mais próximo da banda de condução, assim $\dfrac{(E_{f} - E_{i})}{K_{B}T} >> 1$.
+
+\section*{Explique tudo o que você entende sobre semicondutor dopado com impurezas
+aceitadoras (o que acontece quimicamente, quem é o portador majoritário, como fica o
+nível de Fermi, etc...)}
+\label{q18}
+
+O semicondutor tem suas propriedades elétricas modificadas pela adição
+de impurezas,  processo de dopagem,  para se obter  uma característica
+desejada.   Quimicamente  a  impureza  retira  elétrons  da  banda  de
+valência do  semicondutor aumentando a ocorrência  de buracos, estados
+energéticos  não  preenchidos.  Logo  os  buracos  são  os  portadores
+majoritários.
+
+\vspace*{0.5cm}
+
+\noindent Dado ao excesso de buracos e ausência de elétrons o nível de
+\emph{Fermi}   está  mais   próximo  da   banda  de   valência,  assim
+$\left|\left|\dfrac{(E_{f} - E_{i})}{K_{B}T}\right|\right| >> 1$.
+
+\section*{Questão 19}
+\label{q19}
+
+
+Seja  um semicondutor  tipo n  com  $N_{d}$ impurezas  doadoras a  uma
+temperatura tal  que todas estejam  ionizadas, ou seja  $N_{d} \approx
+N^{+}_{d}$. Neste caso,  a neutralidade total da carga  nos afirma que
+$n_{0} ~ p_{0} + N_{d}$.  Usando a lei de ação das massas ($n_{0}p_{0}
+= n^{2}_{i}$), temos
+
+$$
+n_{0} =  \dfrac{N_{d}}{2} +  \left[\left(\dfrac{N_{d}}{2}\right)^{2} +
+  n_{i}^{2}\right]^{\frac{1}{2}}
+p_{0} = - \dfrac{N_{d}}{2} + \left[\left(\dfrac{N_{d}}{2}\right)^{2} +
+n_{i}^{2}\right]^{\frac{1}{2}}
+$$
+
+Normalmente,  no semicondutor  dopado  $N_{d} >>  n_{i}$, neste  caso,
+fazendo simplificações  obtemos: $$n_{0} ~ N_{d}  \,\, \mathrm{e} \,\,
+p_{0} \approx \dfrac{n^{2}_{i}}{N_{d}}.$$
+
+Para determinar o nível de \emph{Fermi}, fazemos:
+
+\begin{eqnarray*}
+  n_{0} & = & N_{c} e^{\dfrac{-(E_{c} - E_{f})}{K_{B}T}} \\ \nonumber
+       & = & N_{d} \\ \nonumber
+  E_{f} & = & E_{c} - K_{B}T \ln{\dfrac{N_{c}}{N_{v}}} \nonumber
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  n_{0} & = & n_{i} e^{\dfrac{(E_{f} - E_{i})}{K_{B}T}} \\ \nonumber
+       & = & N_{d} \\ \nonumber
+  E_{f} & = & E_{i} + K_{B}T \ln{\dfrac{N_{d}}{N_{i}}} \nonumber
+\end{eqnarray*}
+
+Mostre passo a  passo que, para um semicondutor  tipo \emph{p}, dopado
+com impurezas  aceitadoras, as  expressões para  as concentrações  e o
+nível de Fermi são:
+
+\begin{eqnarray*}
+  n_{0} & \approx & \dfrac{n^{2}_{i}}{N_{a}} \\ \nonumber
+  p_{0} & \approx & N_{a} \\ \nonumber
+  E_{f} & = & E_{v} + K_{B}T \ln{\dfrac{N_{v}}{N_{a}}} \\ \nonumber
+  E_{f} & = & E_{i} - K_{B}T \ln{\dfrac{N_{a}}{n_{i}}} \nonumber
+\end{eqnarray*}
+
+usando:
+
+\begin{eqnarray*}
+  p_{0} & = & N_{v} e^{\dfrac{-(E_{f} - E_{v})}{K_{B}T}} \\ \nonumber
+  p_{0} & = & n_{i} e^{\dfrac{(E_{i} - E_{f})}{K_{B}T}} \nonumber
+\end{eqnarray*}
+
+\section*{Quem   apresenta   maior   condutividade,   o   semicondutor
+intrínseco ou o dopado? Por que?}
+\label{q20}
+
+O  extrínseco,  dopado,  possui   maior  condutividade.  Dado  que  as
+impurezas  adicionadas ao  material  acrescentam  elétrons ou  buracos
+excedentes, no  material, permitem que ocorram  uma densidade superior
+de portadores  de carga  na banda de  valência. Assim,  permitindo uma
+maior mobilidade  de elétrons entre a  banda de valência e  a banda de
+condução.
+
+\section*{Calcule as concentrações  de elétrons e buracos  e a posição
+do nível  de Fermi  (em relação  à energia da  banda de  condução) num
+cristal de silício dopado com $10^{16} \si{\centi\meter^{-3}}$ átomos de
+$A_{s}$,  à  temperatura  $T  = 290  \si{\kelvin}$  ($K_{B}T  =  0,025
+\si{\electronvolt}$).}
+\label{q21}
+
